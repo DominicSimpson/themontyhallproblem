@@ -20,7 +20,7 @@
 --- 
 ## Preparation
 
-###### In order to prepare for writing a program that demonstrates that Vos Savant was and is correct, I completed some Photoshop mock-ups first that help visualise the problem, without having to use complex mathmatical equations. You can see them below. They should be read down (columns) rather than across (rows). 
+###### In order to prepare for writing a program that demonstrates that Vos Savant was and is correct, I completed some Photoshop mock-ups first that help visualise the problem, without having to use complex mathmatical equations. You can see them below. They should be read down (as columns) rather than across (as rows). 
 
 ![MontyHallProblem_Visualisation1](https://user-images.githubusercontent.com/52511353/202873322-a004bb5c-82ab-459d-aff4-6b3623dc5582.jpg)
 
