@@ -18,7 +18,7 @@
 ![monty-hall-problem-mathmaticalequation(2)](https://user-images.githubusercontent.com/52511353/202872160-da03657d-b52a-445f-b638-f68e68b294cb.jpg)
 
 --- 
-# Preparation
+## Preparation
 
 ###### In order to prepare for writing a program that demonstrates that Vos Savant was and is correct, I completed some Photoshop mock-ups first that help visualise the problem, without having to use complex mathmatical equations. You can see them below. 
 
