@@ -50,11 +50,13 @@ The second step was to consider the variables and functions that will be require
 
 | Variable              | What                                         | Type          |
 | -------------         |:-------------:                               | -----:        |
+| createElements        | set up door, car, and goats                  |
 | prize                 | whatever is behind each door                 |   ?           |
 | gameStatus            | what status the game is in                   |               |
 | options               | ?                                            |               |
 | hasWon                | whether the contestant has chose the correct door |             |
 | startAgain            | reset and try again                          |                |
+| outcomeDisplay        | displays if user was successful or not        |               |
 
 
 
