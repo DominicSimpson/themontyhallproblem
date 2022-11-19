@@ -38,7 +38,8 @@ The second step was to consider the variables and functions that will be require
 | -------------         |:-------------:                               | -----:        |
 | Door variables and functions                                                         |
 | doors                 | the three doors                              | array?        |
-| pickedDoor            | the door that the contestant picks           |               | 
+| pickDoor              | the door that the contestant picks           | function      | 
+| pickedDoor            | the door that the contestant picks           | variable      | 
 | winningDoor           | the door that has the car                    |               |
 | revealNotCorrectDoor  | the two doors that don't contain the car     | function      |
 | doorReveal            | the door that the host reveals               |               |
@@ -53,6 +54,7 @@ The second step was to consider the variables and functions that will be require
 | gameStatus            | what status the game is in                   |               |
 | options               | ?                                            |               |
 | hasWon                | whether the contestant has chose the correct door |             |
+| startAgain            | reset and try again                          |                |
 
 
 
