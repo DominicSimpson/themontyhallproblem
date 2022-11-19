@@ -32,14 +32,23 @@
 
 ![MontyHallProblem_Visualisation3](https://user-images.githubusercontent.com/52511353/202874454-97af8b54-72a1-4c89-a550-9c791c5c01a4.jpg)
 
-The second step was to consider the variables that will be required when writing the code and brainstorm them in the chart below. 
+The second step was to consider the variables and functions that will be required when writing the code and brainstorm them in the chart below. 
 
-| Variable         | What                         | Type  |
-| -------------    |:-------------:               | -----:|
-| doors            | the three doors              | array?|
-| prize            | whatever is behind each door |   ?   |
-| winningDoor      | the door that has the car    |       |
-| revealDoorPrize  | reveals the door prize       |       |
+| Variable              | What                                         | Type          |
+| -------------         |:-------------:                               | -----:        |
+| Door variables and functions                                                         |
+| doors                 | the three doors                              | array?        |
+| pickedDoor            | the door that the contestant picks           |               | 
+| winningDoor           | the door that has the car                    |               |
+| revealNotCorrectDoor  | the two doors that don't contain the car     | function      |
+
+| prize                 | whatever is behind each door                 |   ?           |
+| revealNotCorrectDoor  | the two doors that don't contain the car     | function      |
+| gameStatus            | what status the game is in                   |               |
+| options               | ?                                            |               |
+| doorReveal            | the door that the host reveals               |               |
+| stayOnDoor            | contestant chooses to stay with that door    | Note: button in HTML              |
+| switchOtherDoor       | contestant chooses to switch to other door   | Note: button in HTML              |
 
 
 
