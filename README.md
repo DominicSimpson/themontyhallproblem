@@ -45,14 +45,14 @@ The second step was to consider the variables and functions that will be require
 | playerSwitch          | ?                                            |               |
 | stayOnDoor            | contestant chooses to stay with that door    | Note: button in HTML              |
 | switchOtherDoor       | contestant chooses to switch to other door   | Note: button in HTML   
-| newPick               | the door that wasn't chosen by the           |               |  
-                          contestant or chosen by the host
+| newPick               | the door that wasn't chosen by the contestant or chosen by the host |             |
 
 | Variable              | What                                         | Type          |
 | -------------         |:-------------:                               | -----:        |
 | prize                 | whatever is behind each door                 |   ?           |
 | gameStatus            | what status the game is in                   |               |
-| options               | ?                                            |               
+| options               | ?                                            |               |
+| hasWon                | whether the contestant has chose the correct door |             |
 
 
 
