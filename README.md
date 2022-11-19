@@ -24,7 +24,7 @@
 
 ![MontyHallProblem_Visualisation1](https://user-images.githubusercontent.com/52511353/202873322-a004bb5c-82ab-459d-aff4-6b3623dc5582.jpg)
 
-###### In the simple example above, with each number on the left representing a door, you can see that of the nine possible scenarios, switching gives you statistically a six in nine chance of achieving the door with the car, compared to only three if you stay - the same fractions expressed above.
+###### In the simple example above, with each number on the left representing a door, you can see that of the nine possible scenarios, switching gives you statistically a six in nine chance of achieving the door with the car, compared to only three if you stay - the same fractions expressed previously.
 
 ![MontyHallProblem_Visualisation2](https://user-images.githubusercontent.com/52511353/202873335-1a6dcad5-1f5b-4bd0-a7ba-40ad54594ea2.jpg)
 
