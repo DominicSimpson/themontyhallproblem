@@ -26,11 +26,11 @@
 
 ###### In the simple example above, with each number on the left representing a door, you can see that of the nine possible scenarios, switching gives you statistically a six in nine chance of achieving the door with the car, compared to only three if you stay - the same fractions expressed previously.
 
-![MontyHallProblem_Visualisation2](https://user-images.githubusercontent.com/52511353/202873335-1a6dcad5-1f5b-4bd0-a7ba-40ad54594ea2.jpg)
+![MontyHallProblem_Visualisation2](https://user-images.githubusercontent.com/52511353/202874447-f76882dd-1fe9-4ec5-8323-98a83571d92c.jpg)
 
 ###### The above example, meanwhile, runs through the permutations if the user agrees to switch doors. As you can see, there is a two in three chance that the user opens the door that contains the car. This is compared with the image below, which runs through the permutations if the user *doesn't* agree to switch doors. In this scenario, there is a one in three chance that the user open the door that contains the car. 
 
-![MontyHallProblem_Visualisation3](https://user-images.githubusercontent.com/52511353/202873338-1c067672-877e-475c-9bc1-3239eb6badfe.jpg)
+![MontyHallProblem_Visualisation3](https://user-images.githubusercontent.com/52511353/202874454-97af8b54-72a1-4c89-a550-9c791c5c01a4.jpg)
 
 The second step was to consider the variables that will be required when writing the code and brainstorm them in the chart below. 
 
