@@ -20,7 +20,7 @@
 --- 
 ## Preparation
 
-###### In order to prepare for writing a program that demonstrates that Vos Savant was and is correct, I completed some Photoshop mock-ups first that help visualise the problem, without having to use complex mathmatical equations. You can see them below. They should be read down (as columns) rather than across (as rows). 
+###### In order to prepare for writing a program that demonstrates that Vos Savant was and is correct, my first step was to complete some Photoshop mock-ups first that helped me to visualise the problem, without having to use complex mathmatical equations. You can see them below. They should be read down (as columns) rather than across (as rows). 
 
 ![MontyHallProblem_Visualisation1](https://user-images.githubusercontent.com/52511353/202873322-a004bb5c-82ab-459d-aff4-6b3623dc5582.jpg)
 
@@ -31,5 +31,16 @@
 ###### The above example, meanwhile, runs through the permutations if the user agrees to switch doors. As you can see, there is a two in three chance that the user opens the door that contains the car. This is compared with the image below, which runs through the permutations if the user *doesn't* agree to switch doors. In this scenario, there is a one in three chance that the user open the door that contains the car. 
 
 ![MontyHallProblem_Visualisation3](https://user-images.githubusercontent.com/52511353/202873338-1c067672-877e-475c-9bc1-3239eb6badfe.jpg)
+
+The second step was to consider the variables that will be required when writing the code and brainstorm them in the chart below. 
+
+| Variable         | What                         | Type  |
+| -------------    |:-------------:               | -----:|
+| doors            | the three doors              | array?|
+| prize            | whatever is behind each door |   ?   |
+| winningDoor      | the door that has the car    |       |
+| revealDoorPrize  | reveals the door prize       |       |
+
+
 
 ---
