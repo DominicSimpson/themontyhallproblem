@@ -34,28 +34,34 @@
 
 The second step was to consider the variables and functions that will be required when writing the code and brainstorm them. The first chart below just contains those functions and variables relating to the doors. 
 
-| Door Variables and functions    | What                                                                | Type                  |
-| -------------                   |:-------------:                                                      | -----:                |
-| doors                           | the three doors                                                     | array?                |
-| pickDoor                        | the door that the contestant picks                                  | function              | 
-| pickedDoor                      | the door that the contestant picks                                  | variable              | 
-| winningDoor                     | the door that has the car                                           |                       |
-| revealNotCorrectDoor            | the two doors that don't contain the car                            | function              |
-| doorReveal                      | the door that the host reveals                                      |                       |
-| playerSwitch                    | ?                                                                   |                       |
-| stayOnDoor                      | contestant chooses to stay with that door                           | Note: button in HTML  |
-| switchOtherDoor                 | contestant chooses to switch to other door                          | Note: button in HTML  |   
-| newPick                         | the door that wasn't chosen by the contestant or chosen by the host |                       |
+| Door Variables and functions    | What                                                                    | Type                  |
+| -------------                   |:-------------:                                                          | -----:                |
+| doors                           | the three doors                                                         | array?                |
+| pickDoor                        | the door that the contestant picks                                      | function              | 
+| pickedDoor                      | the door that the contestant picks                                      | variable              | 
+| winningDoor                     | the door that has the car                                               |                       |
+| revealNotCorrectDoor            | the two doors that don't contain the car                                | function              |
+| doorReveal                      | the door that the host reveals                                          |                       |
+| playerSwitch                    | ?                                                                       |                       |
+| stayOnDoor                      | contestant chooses to stay with that door                               | Note: button in HTML  |
+| switchOtherDoor                 | contestant chooses to switch to other door                              | Note: button in HTML  |   
+| newPick                         | the door that wasn't chosen by the contestant or chosen by the host     |                       |
 
-| Variable                        | What                                                                | Type                  |
-| -------------                   |:-------------:                                                      | -----:                |
-| createElements                  | set up door, car, and goats                                         |                       |
-| prize                           | whatever is behind each door                                        |   ?                   |
-| gameStatus                      | what status the game is in                                          |                       |
-| options                         | ?                                                                   |                       |
-| hasWon                          | whether the contestant has chose the correct door                   |                       |
-| startAgain                      | reset and try again                                                 |                       |
-| outcomeDisplay                  | displays if user was successful or not                              |                       |
+| Variable                        | What                                                                    | Type                  |
+| -------------                   |:-------------:                                                          | -----:                |
+| createElements                  | set up door, car, and goats                                             |                       |
+| prize                           | whatever is behind each door                                            |   ?                   |
+| gameStatus                      | what status the game is in                                              |                       |
+| options                         | ?                                                                       |                       |
+| hasWon                          | whether the contestant has chose the correct door                       |                       |
+| startAgain                      | reset and try again                                                     |                       |
+| outcomeDisplay                  | displays if user was successful or not                                  |                       |
+| totalSwitches                   | how many times the contestant agreed to switch to another door          |                       |
+| totalStays                      | how many times the contestant agreed to stay with their original choice |                       |
+| totalSwitchWins                 | how many times the contestant has switched and won the car              |                       |
+| totalStayWins                   | how many times the contestant has stayed and won the car                |                       |
+
+
 
 
 
