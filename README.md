@@ -26,6 +26,9 @@
 
 ###### In the simple example above, with each number on the left representing a door, you can see that of the nine possible scenarios, switching gives you statistically a six in nine chance of achieving the door with the car, compared to only three if you stay - the same fractions expressed above.
 
+![MontyHallProblem_Visualisation2](https://user-images.githubusercontent.com/52511353/202872818-870e2490-03cb-4a15-9128-a77385817c8a.jpg)
+
+###### The above example, meanwhile, runs through the permutations if the user agrees to switch doors. As you can see, there is a two in three chance that the user opens the door that contains the car. 
 
 
 ---
