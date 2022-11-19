@@ -28,7 +28,11 @@
 
 ![MontyHallProblem_Visualisation2](https://user-images.githubusercontent.com/52511353/202872818-870e2490-03cb-4a15-9128-a77385817c8a.jpg)
 
-###### The above example, meanwhile, runs through the permutations if the user agrees to switch doors. As you can see, there is a two in three chance that the user opens the door that contains the car. 
+###### The above example, meanwhile, runs through the permutations if the user agrees to switch doors. As you can see, there is a two in three chance that the user opens the door that contains the car. This is compared with the image below, which runs through the permutations if the user *doesn't* agree to switch doors. In this scenario, there is a one in three chance that the user open the door that contains the car. 
+
+![MontyHallProblem_Visualisation3](https://user-images.githubusercontent.com/52511353/202873090-3b031aae-1ffd-4ce1-bfa3-ef28e3fbaee2.jpg)
+
+
 
 
 ---
