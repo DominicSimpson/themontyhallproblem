@@ -2,7 +2,7 @@
 
 ![monty_hall](https://user-images.githubusercontent.com/52511353/202871777-56df5935-d665-44bf-992f-1d3c188237ac.jpeg)
 
-###### Imagine being on a TV game show in the 1970s called *Let's Make A Deal*. The game show host, in a sporting gray chequered suit, shows you, the contestent, three doors on the stage. You are informed that behind one of these doors is a shining sports car, which will be yours. Behind the other two are...goats. 
+### Imagine being on a TV game show in the 1970s called *Let's Make A Deal*. The game show host, in a sporting gray chequered suit, shows you, the contestent, three doors on the stage. You are informed that behind one of these doors is a shining sports car, which will be yours. Behind the other two are...goats. 
 ###### If you choose the right door, you get to keep the shiny sports car. If you choose the wrong door...well, you *could* take the goat home (provided you don't live in a flat, in which case it would be awkward) - they are noble creatures after all.
 ###### Let's say that you choose door number one, because the human brain tends to favour linearity. Rather than opening that door, however, the host - who knows what's behind the doors - elects to open door number three instead. Behind the third door is one of the goats. The host then says to you, "Do you want to pick door number two?" At which point you ask yourself: is it to your advantage to switch to door number two as your chosen door? Or should you stay with door number one, your original choice?
 ###### This conundrum is known as The Monty Hall problem - a probability puzzle, which has been poured over by statisticans and mathmaticians. The puzzle was solved by Marilyn vos Savant, an American magazine columnist with the highest recorded intelligence quotient in the *Guinness Book of Records*. Vos Savant observed that the contestent would be correct in switching doors, because this would mean a two in three ($^\frac{2}{3}$ (or 66.6666666)) probability of uncovering the door with the car, compared with only a one in three ($^\frac{1}{3}$ (or 33.3333333)) probability if the contestent stayed with the original choice of door.
@@ -15,11 +15,11 @@
 
 # Preparation
 
-### In order to prepare for writing a program that demonstrates that Vos Savant was and is correct, I completed some Photoshop mock-ups first that help visualise the problem, without having to use complex mathmatical equations. You can see them below. 
+###### In order to prepare for writing a program that demonstrates that Vos Savant was and is correct, I completed some Photoshop mock-ups first that help visualise the problem, without having to use complex mathmatical equations. You can see them below. 
 
 ![MontyHallProblem_Visualisation1](https://user-images.githubusercontent.com/52511353/202872410-7f5381ce-f9c7-493a-a471-44eb4ca19797.jpg)
 
-### In the simple example above, with each number on the left representing a door, you can see that of the nine possible scenarios, switching gives you statistically a six in nine chance of achieving the door with the car, compared to only three if you stay - the same fractions expressed above.
+###### In the simple example above, with each number on the left representing a door, you can see that of the nine possible scenarios, switching gives you statistically a six in nine chance of achieving the door with the car, compared to only three if you stay - the same fractions expressed above.
 
 
 
