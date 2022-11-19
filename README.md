@@ -13,26 +13,23 @@
 ###### When the contestant first makes their choice, there is a two in three $^\frac{2}{3}$ chance that the car is behind one of the unchosen doors. This probability does not change after the host reveals a goat behind one of the unchosen doors. When the host provides information about the two unchosen doors (revealing that one of them, door number three, does not have the car behind it), the two in three $^\frac{2}{3}$ chance of the car being behind one of the unchosen doors rests on the unchosen and unrevealed door - door number two - as opposed to the one in three $^\frac{1}{3}$ chance of the car being behind the door that the contestent chose initially (door number one). 
 ###### This confounding logic has led to the problem gaining a lot of mathmatical equations and statistical analysis, such as in the images below:
 
-![monty-hall-problem-mathmaticalequation](https://user-images.githubusercontent.com/52511353/202872164-968469d3-7e7a-445a-8187-54895faa705a.png)
+![monty-hall-problem-mathmaticalequation](https://user-images.githubusercontent.com/52511353/202873316-72600ac2-83d9-44ee-94cf-ef51a03d3eb9.png)
 
 ![monty-hall-problem-mathmaticalequation(2)](https://user-images.githubusercontent.com/52511353/202872160-da03657d-b52a-445f-b638-f68e68b294cb.jpg)
 
 --- 
 ## Preparation
 
-###### In order to prepare for writing a program that demonstrates that Vos Savant was and is correct, I completed some Photoshop mock-ups first that help visualise the problem, without having to use complex mathmatical equations. You can see them below. 
+###### In order to prepare for writing a program that demonstrates that Vos Savant was and is correct, I completed some Photoshop mock-ups first that help visualise the problem, without having to use complex mathmatical equations. You can see them below. They should be read down (columns) rather than across (rows). 
 
-![MontyHallProblem_Visualisation1](https://user-images.githubusercontent.com/52511353/202872410-7f5381ce-f9c7-493a-a471-44eb4ca19797.jpg)
+![MontyHallProblem_Visualisation1](https://user-images.githubusercontent.com/52511353/202873322-a004bb5c-82ab-459d-aff4-6b3623dc5582.jpg)
 
 ###### In the simple example above, with each number on the left representing a door, you can see that of the nine possible scenarios, switching gives you statistically a six in nine chance of achieving the door with the car, compared to only three if you stay - the same fractions expressed above.
 
-![MontyHallProblem_Visualisation2](https://user-images.githubusercontent.com/52511353/202872818-870e2490-03cb-4a15-9128-a77385817c8a.jpg)
+![MontyHallProblem_Visualisation2](https://user-images.githubusercontent.com/52511353/202873335-1a6dcad5-1f5b-4bd0-a7ba-40ad54594ea2.jpg)
 
 ###### The above example, meanwhile, runs through the permutations if the user agrees to switch doors. As you can see, there is a two in three chance that the user opens the door that contains the car. This is compared with the image below, which runs through the permutations if the user *doesn't* agree to switch doors. In this scenario, there is a one in three chance that the user open the door that contains the car. 
 
-![MontyHallProblem_Visualisation3](https://user-images.githubusercontent.com/52511353/202873090-3b031aae-1ffd-4ce1-bfa3-ef28e3fbaee2.jpg)
-
-
-
+![MontyHallProblem_Visualisation3](https://user-images.githubusercontent.com/52511353/202873338-1c067672-877e-475c-9bc1-3239eb6badfe.jpg)
 
 ---
