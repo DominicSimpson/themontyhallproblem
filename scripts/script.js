@@ -5,7 +5,7 @@ console.log("Hello world!");
 
 let doors = [];
 
-    
+function setUp() {
 
     for (let i = 0; i < 3; i++) {
        
@@ -15,14 +15,22 @@ let doors = [];
 
     }
 
-    function getRandomInt(max) {
-        return Math.floor(Math.random() * max);
-      }
-      
-      
-      let prize = getRandomInt(3);
-      prize.appendItem;
+    let prize = document.write('<img src="images/sportscar.jpg">');
+    document.querySelector('.sportscar');
 
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+    }
+      
+    
+    prize = getRandomInt(3);
+    console.log(prize);
+    
+    document.body.appendChild(prize);
+
+}
+
+setUp();
 
 });
 
