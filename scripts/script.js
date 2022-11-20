@@ -9,8 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
     
         for (let i = 0; i < 3; i++) {
            
-            doors[i] =  document.write('<img src="images/goat.jpg">');
+            doors[i].prize =  document.write('<img src="images/goat.jpg">');
                         document.querySelector('.goat');
+
+            doors[i] = document.write('<img src="images/door.jpg">');
+                        document.querySelector('.door');
     
     
         }
