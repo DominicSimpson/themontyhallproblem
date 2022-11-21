@@ -8,7 +8,7 @@ const doorTwo = document.getElementById('d2');
 const doorThree = document.getElementById('d3');
 const switchChoiceYes = document.getElementById('btn-1');
 const switchChoiceNo = document.getElementById('btn-2');
-const doorImage1 = document.getElementById('door1');
+const doorImage1 = document.getElementById('door1'); // does user want to switch?
 const doorImage2 = document.getElementById('door2');
 const doorImage3 = document.getElementById('door3');
 const SwitchAndWin = document.getElementById('switchAndWin');
@@ -138,7 +138,7 @@ doorImage1.onclick = () => {
 			},1000);
 			
 			// Opening the chosen door
-			setTimeout(() => { doorImage2.src = openDoor2; }, 2500);
+			setTimeout(() => { doorImage2.src = openDoor2; }, 3500);
 			//Conditions to display the result page
 			if (openDoor2 === losePath) {
 				setTimeout(() => { switchAndLose(); }, 3500)
@@ -157,7 +157,7 @@ doorImage1.onclick = () => {
 		"Revealing your chosen door..."; }, 1000);
 		
 		// Opening the chosen door
-		setTimeout(() => { doorImage1.src = openDoor1; }, 2500);
+		setTimeout(() => { doorImage1.src = openDoor1; }, 1500);
 		
 		// Conditions to display the result page
 		if (openDoor1 === losePath) {
