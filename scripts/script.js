@@ -107,10 +107,10 @@ doorImage1.onclick = () => {
 		// suitable dialogue.
 		if (doorImage2.src === losePath()){
 			row2.hidden = true;
-			instructions.innerHTML = "You switched to door3";
+			instructions.innerHTML = "You switched to Door 3";
 			setTimeout(()=>{
 				instructions.innerHTML =
-				"Revealing your chosen door......";
+				"Revealing your chosen door...";
 			},1000);
 
 			// Opening the chosen door
@@ -118,15 +118,14 @@ doorImage1.onclick = () => {
 			{ doorImage3.src = openDoor3; }, 2500);
 
 			//Conditions to display the result page
-			if (openDoor3 === losePath) {
+			if (openDoor3 === losePath()) {
 				setTimeout(() => { switchAndLose(); }, 3500)
 			} else {
 				setTimeout(() => { switchAndWin(); }, 3500)
 			}
 		}
 		//If the opened door is door3, forming a suitable dialogue.
-		else if (doorImage3.src ===
-		"https://image.flaticon.com/icons/svg/836/836069.svg") {
+		else if (doorImage3.src === losePath()) {
 			row2.hidden = true;
 			instructions.innerHTML = "You switched to door2";
 			setTimeout(()=>{
@@ -137,7 +136,7 @@ doorImage1.onclick = () => {
 			// Opening the chosen door
 			setTimeout(() => { doorImage2.src = openDoor2; }, 2500);
 			//Conditions to display the result page
-			if (openDoor2 === losePath) {
+			if (openDoor2 === losePath()) {
 				setTimeout(() => { switchAndLose(); }, 3500)
 			} else {
 				setTimeout(() => { switchAndWin(); }, 3500)
@@ -148,7 +147,7 @@ doorImage1.onclick = () => {
 	//Event listener if the player does not opts to switch
 	switchChoiceNo.onclick = () => {
 		row2.hidden = true;
-		instructions.innerHTML = "Your choice is still door1";
+		instructions.innerHTML = "Your choice is still door 1";
 		setTimeout(() =>
 		{ instructions.innerHTML =
 		"Revealing your chosen door......"; }, 1000);
@@ -157,7 +156,7 @@ doorImage1.onclick = () => {
 		setTimeout(() => { doorImage1.src = openDoor1; }, 2500);
 		
 		// Conditions to display the result page
-		if (openDoor1 === losePath) {
+		if (openDoor1 === losePath()) {
 			setTimeout(() => { noSwitchAndLose(); }, 3500)
 		} else {
 			setTimeout(() => { noSwitchAndWin(); }, 3500)
@@ -192,37 +191,35 @@ doorImage2.onclick = () => {
 	setTimeout(() => { d2.hidden = true; }, 1000);
 	setTimeout(() => { row2.hidden = false; }, 1000)
 
-	if (openDoor1 === losePath) {
+	if (openDoor1 === losePath()) {
 		setTimeout(() =>
 		{ doorImage1.src = openDoor1; }, 2000);
 
-	} else if (openDoor3 === losePath) {
+	} else if (openDoor3 === losePath()) {
 		setTimeout(() =>
 		{ doorImage3.src = openDoor3; }, 2000);
 	}
 
 	switchChoiceYes.onclick = () => {
-		if (doorImage1.src ===
-		"https://image.flaticon.com/icons/svg/836/836069.svg") {
+		if (doorImage1.src === losePath()) {
 			row2.hidden = true;
-			instructions.innerHTML = "You switched to door3"
+			instructions.innerHTML = "You switched to door 3"
 			setTimeout(() =>
 			{ instructions.innerHTML =
 			"Revealing your chosen door......"; }, 1000);
 			setTimeout(() => { doorImage3.src = openDoor3; }, 2500);
-			if (openDoor3 === losePath) {
+			if (openDoor3 === losePath()) {
 				setTimeout(() => { switchAndLose(); }, 3500)
 			} else {
 				setTimeout(() => { switchAndWin(); }, 3500)
 			}
-		} else if (doorImage3.src ===
-		"https://image.flaticon.com/icons/svg/836/836069.svg") {
+		} else if (doorImage3.src === losePath()) {
 			row2.hidden = true;
-			instructions.innerHTML = "You switched to door1";
+			instructions.innerHTML = "You switched to door 1";
 			setTimeout(() => { instructions.innerHTML
-			= "Revealing your chosen door......"; }, 1000);
+			= "Revealing your chosen door..."; }, 1000);
 			setTimeout(() => { doorImage1.src = openDoor1; }, 2500);
-			if (openDoor1 === losePath) {
+			if (openDoor1 === losePath()) {
 				setTimeout(() => { switchAndLose(); }, 3500)
 			} else {
 				setTimeout(() => { switchAndWin(); }, 3500)
@@ -233,9 +230,9 @@ doorImage2.onclick = () => {
 		row2.hidden = true;
 		instructions.innerHTML = "Your choice is still door2"
 		setTimeout(() => { instructions.innerHTML =
-		"Revealing your chosen door......"; }, 1000);
+		"Revealing your chosen door..."; }, 1000);
 		setTimeout(() => { doorImage2.src = openDoor2; }, 2500);
-		if (openDoor2 === losePath) {
+		if (openDoor2 === losePath()) {
 			setTimeout(() => { noSwitchAndLose(); }, 3500)
 		} else {
 			setTimeout(() => { noSwitchAndWin(); }, 3500)
@@ -248,34 +245,32 @@ doorImage3.onclick = () => {
 	setTimeout(() => { d3.hidden = true; }, 1000);
 	setTimeout(() => { row2.hidden = false; }, 1000)
 
-	if (openDoor1 === losePath) {
+	if (openDoor1 === losePath()) {
 		setTimeout(() => { doorImage1.src = openDoor1; }, 2000);
 
-	} else if (openDoor2 === losePath) {
+	} else if (openDoor2 === losePath()) {
 		setTimeout(() => { doorImage2.src = openDoor2; }, 2000);
 	}
 
 	switchChoiceYes.onclick = () => {
-		if (doorImage1.src ===
-		"https://image.flaticon.com/icons/svg/836/836069.svg") {
+		if (doorImage1.src === losePath()) {
 			row2.hidden = true;
-			instructions.innerHTML = "You switched to door2"
+			instructions.innerHTML = "You switched to door 2";
 			setTimeout(() => { instructions.innerHTML =
-			"Revealing your chosen door......"; }, 1000);
+			"Revealing your chosen door..."; }, 1000);
 			setTimeout(() => { doorImage2.src = openDoor2; }, 2500);
-			if (openDoor2 === losePath) {
+			if (openDoor2 === losePath()) {
 				setTimeout(() => { switchAndLose(); }, 3500)
 			} else {
 				setTimeout(() => { switchAndWin(); }, 3500)
 			}
-		} else if (doorImage2.src ===
-		"https://image.flaticon.com/icons/svg/836/836069.svg") {
+		} else if (doorImage2.src === losePath()) {
 			row2.hidden = true;
-			instructions.innerHTML = "You switched to door1"
+			instructions.innerHTML = "You switched to door 1"
 			setTimeout(() => { instructions.innerHTML =
-			"Revealing your chosen door......"; }, 1000);
+			"Revealing your chosen door..."; }, 1000);
 			setTimeout(() => { doorImage1.src = openDoor1; }, 2500);
-			if (openDoor1 === losePath) {
+			if (openDoor1 === losePath()) {
 				setTimeout(() => { switchAndLose(); }, 3500)
 			} else {
 				setTimeout(() => { switchAndWin(); }, 3500)
@@ -286,15 +281,12 @@ doorImage3.onclick = () => {
 		row2.hidden = true;
 		instructions.innerHTML = "Your choice is still door3"
 		setTimeout(() => { instructions.innerHTML =
-		"Revealing your chosen door......"; }, 1000);
+		"Revealing your chosen door..."; }, 1000);
 		setTimeout(() => { doorImage3.src = openDoor3; }, 2500);
-		if (openDoor3 === losePath) {
+		if (openDoor3 === losePath()) {
 			setTimeout(() => { noSwitchAndLose(); }, 3500)
 		} else {
 			setTimeout(() => { noSwitchAndWin(); }, 3500)
 		}
 	}
 }
-
-
-    
