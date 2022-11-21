@@ -36,7 +36,8 @@ The second step was to consider the variables and functions that will be require
 
 | Door Variables and functions    | What                                                                    | Type                  |
 | -------------                   |:-------------:                                                          | -----:                |
-| doors                           | the three doors                                                         | array?                |
+| doors                           | the doors                                                               | array
+| totalDoors                      | the total amount of doors (i.e. 3)                                      | variable
 | pickDoor                        | the door that the contestant picks                                      | function              | 
 | pickedDoor                      | the door that the contestant picks                                      | variable              | 
 | winningDoor                     | the door that has the car                                               |                       |
@@ -56,6 +57,7 @@ The second step was to consider the variables and functions that will be require
 | hasWon                          | whether the contestant has chose the correct door                       |                       |
 | startAgain                      | reset and try again                                                     |                       |
 | outcomeDisplay                  | displays if user was successful or not                                  |                       |
+| statistics                      | stores statistics on the user's results; contains the below items       | object                |
 | totalSwitches                   | how many times the contestant agreed to switch to another door          |                       |
 | totalStays                      | how many times the contestant agreed to stay with their original choice |                       |
 | totalSwitchWins                 | how many times the contestant has switched and won the car              |                       |
