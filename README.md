@@ -62,6 +62,7 @@ The second step was to consider the variables and functions that will be require
 | totalStays                      | how many times the contestant agreed to stay with their original choice |                       |
 | totalSwitchWins                 | how many times the contestant has switched and won the car              |                       |
 | totalStayWins                   | how many times the contestant has stayed and won the car                |                       |
+| clearStatistics                 | clears user's statistics                                                | function              |
 
 
 
