@@ -1,13 +1,13 @@
 // Declaring global variables
-const body = document.getElementById('body');
-const instructions = document.getElementById('instructions');
-const row1 = document.getElementById('row1');
-const row2 = document.getElementById('row2');
-const d1 = document.getElementById('d1');
-const d2 = document.getElementById('d2');
-const d3 = document.getElementById('d3');
-const switchChoiceYes = document.getElementById('btn-1');
-const switchChoiceNo = document.getElementById('btn-2');
+const body = document.getElementById("body");
+const instructions = document.getElementById("instructions");
+const row1 = document.getElementById("row1");
+const row2 = document.getElementById("row2");
+const doorOne = document.getElementById("d1");
+const doorTwo = document.getElementById("d2");
+const doorThree = document.getElementById("d3");
+const switchChoiceYes = document.getElementById("btn-1");
+const switchChoiceNo = document.getElementById("btn-2");
 const doorImage1 = document.getElementById('door1');
 const doorImage2 = document.getElementById('door2');
 const doorImage3 = document.getElementById('door3');
@@ -39,19 +39,23 @@ const losePath = function show_image2(src, width, height, alt) {
   document.body.appendChild(img2);
 }
 // Variables for shuffling the doors
-var openDoor1, openDoor2, openDoor3, winner;
+let openDoor1;
+let openDoor2;
+let openDoor3;
+let winner;
 
 
 
 // Hiding unnecessary elements
+
 row2.hidden = true;
 SwitchAndWin.hidden = true;
 SwitchAndLose.hidden = true;
 NoSwitchAndWin.hidden = true;
 NoSwitchAndLose.hidden = true;
-d1.hidden = true;
-d2.hidden = true;
-d3.hidden = true;
+doorOne.hidden = true;
+doorTwo.hidden = true;
+doorThree.hidden = true;
 
 
 
@@ -82,20 +86,20 @@ doorImage1.onclick = () => {
 
 	// Revealing necessary elements for dialogue
 	row1.hidden = true;
-	d1.hidden = false;
+	doorOne.hidden = false;
 	setTimeout(()=>{
-		d1.hidden = true;
+		doorOne.hidden = true;
 	},1000);
 	setTimeout(()=>{
 		row2.hidden = false;
 	},1000);
 
 	// Opening a door which has a goat behind it.
-	if (openDoor2 === losePath()) {
+	if (openDoor2 === losePath) {
 		setTimeout(() =>
 		{ doorImage2.src = openDoor2; }, 2000);
 
-	} else if (openDoor3 === losePath()) {
+	} else if (openDoor3 === losePath) {
 		setTimeout(() =>
 		{ doorImage3.src = openDoor3; }, 2000);
 	}
@@ -105,7 +109,7 @@ doorImage1.onclick = () => {
 
 		// If the opened door is door2, forming a
 		// suitable dialogue.
-		if (doorImage2.src === losePath()){
+		if (doorImage2.src === losePath){
 			row2.hidden = true;
 			instructions.innerHTML = "You switched to Door 3";
 			setTimeout(()=>{
@@ -118,25 +122,25 @@ doorImage1.onclick = () => {
 			{ doorImage3.src = openDoor3; }, 2500);
 
 			//Conditions to display the result page
-			if (openDoor3 === losePath()) {
+			if (openDoor3 === losePath) {
 				setTimeout(() => { switchAndLose(); }, 3500)
 			} else {
 				setTimeout(() => { switchAndWin(); }, 3500)
 			}
 		}
 		//If the opened door is door3, forming a suitable dialogue.
-		else if (doorImage3.src === losePath()) {
+		else if (doorImage3.src === losePath) {
 			row2.hidden = true;
-			instructions.innerHTML = "You switched to door2";
+			instructions.innerHTML = "You switched to door 2";
 			setTimeout(()=>{
 				instructions.innerHTML =
-				"Revealing your chosen door......";
+				"Revealing your chosen door...";
 			},1000);
 			
 			// Opening the chosen door
 			setTimeout(() => { doorImage2.src = openDoor2; }, 2500);
 			//Conditions to display the result page
-			if (openDoor2 === losePath()) {
+			if (openDoor2 === losePath) {
 				setTimeout(() => { switchAndLose(); }, 3500)
 			} else {
 				setTimeout(() => { switchAndWin(); }, 3500)
@@ -150,13 +154,13 @@ doorImage1.onclick = () => {
 		instructions.innerHTML = "Your choice is still door 1";
 		setTimeout(() =>
 		{ instructions.innerHTML =
-		"Revealing your chosen door......"; }, 1000);
+		"Revealing your chosen door..."; }, 1000);
 		
 		// Opening the chosen door
 		setTimeout(() => { doorImage1.src = openDoor1; }, 2500);
 		
 		// Conditions to display the result page
-		if (openDoor1 === losePath()) {
+		if (openDoor1 === losePath) {
 			setTimeout(() => { noSwitchAndLose(); }, 3500)
 		} else {
 			setTimeout(() => { noSwitchAndWin(); }, 3500)
@@ -168,58 +172,58 @@ doorImage1.onclick = () => {
 
 const switchAndWin = () => {
 	body.hidden = true;
-	SwitchAndWin.hidden = false;
+	switchAndWin.hidden = false;
 }
 const switchAndLose = () => {
 	body.hidden = true;
-	SwitchAndLose.hidden = false;
+	switchAndLose.hidden = false;
 }
 const noSwitchAndWin = () => {
 	body.hidden = true;
-	NoSwitchAndWin.hidden = false;
+	noSwitchAndWin.hidden = false;
 }
 const noSwitchAndLose = () => {
 	body.hidden = true;
-	NoSwitchAndLose.hidden = false;
+	noSwitchAndLose.hidden = false;
 }
 
 
 
 doorImage2.onclick = () => {
 	row1.hidden = true;
-	d2.hidden = false;
-	setTimeout(() => { d2.hidden = true; }, 1000);
+	doorTwo.hidden = false;
+	setTimeout(() => { doorTwo.hidden = true; }, 1000);
 	setTimeout(() => { row2.hidden = false; }, 1000)
 
-	if (openDoor1 === losePath()) {
+	if (openDoor1 === losePath) {
 		setTimeout(() =>
 		{ doorImage1.src = openDoor1; }, 2000);
 
-	} else if (openDoor3 === losePath()) {
+	} else if (openDoor3 === losePath) {
 		setTimeout(() =>
 		{ doorImage3.src = openDoor3; }, 2000);
 	}
 
 	switchChoiceYes.onclick = () => {
-		if (doorImage1.src === losePath()) {
+		if (doorImage1.src === losePath) {
 			row2.hidden = true;
 			instructions.innerHTML = "You switched to door 3"
 			setTimeout(() =>
 			{ instructions.innerHTML =
-			"Revealing your chosen door......"; }, 1000);
+			"Revealing your chosen door..."; }, 1000);
 			setTimeout(() => { doorImage3.src = openDoor3; }, 2500);
-			if (openDoor3 === losePath()) {
+			if (openDoor3 === losePath) {
 				setTimeout(() => { switchAndLose(); }, 3500)
 			} else {
 				setTimeout(() => { switchAndWin(); }, 3500)
 			}
-		} else if (doorImage3.src === losePath()) {
+		} else if (doorImage3.src === losePath) {
 			row2.hidden = true;
 			instructions.innerHTML = "You switched to door 1";
 			setTimeout(() => { instructions.innerHTML
 			= "Revealing your chosen door..."; }, 1000);
 			setTimeout(() => { doorImage1.src = openDoor1; }, 2500);
-			if (openDoor1 === losePath()) {
+			if (openDoor1 === losePath) {
 				setTimeout(() => { switchAndLose(); }, 3500)
 			} else {
 				setTimeout(() => { switchAndWin(); }, 3500)
@@ -232,7 +236,7 @@ doorImage2.onclick = () => {
 		setTimeout(() => { instructions.innerHTML =
 		"Revealing your chosen door..."; }, 1000);
 		setTimeout(() => { doorImage2.src = openDoor2; }, 2500);
-		if (openDoor2 === losePath()) {
+		if (openDoor2 === losePath) {
 			setTimeout(() => { noSwitchAndLose(); }, 3500)
 		} else {
 			setTimeout(() => { noSwitchAndWin(); }, 3500)
@@ -241,36 +245,36 @@ doorImage2.onclick = () => {
 }
 doorImage3.onclick = () => {
 	row1.hidden = true;
-	d3.hidden = false;
-	setTimeout(() => { d3.hidden = true; }, 1000);
+	doorThree.hidden = false;
+	setTimeout(() => { doorThree.hidden = true; }, 1000);
 	setTimeout(() => { row2.hidden = false; }, 1000)
 
-	if (openDoor1 === losePath()) {
+	if (openDoor1 === losePath) {
 		setTimeout(() => { doorImage1.src = openDoor1; }, 2000);
 
-	} else if (openDoor2 === losePath()) {
+	} else if (openDoor2 === losePath) {
 		setTimeout(() => { doorImage2.src = openDoor2; }, 2000);
 	}
 
 	switchChoiceYes.onclick = () => {
-		if (doorImage1.src === losePath()) {
+		if (doorImage1.src === losePath) {
 			row2.hidden = true;
 			instructions.innerHTML = "You switched to door 2";
 			setTimeout(() => { instructions.innerHTML =
 			"Revealing your chosen door..."; }, 1000);
 			setTimeout(() => { doorImage2.src = openDoor2; }, 2500);
-			if (openDoor2 === losePath()) {
+			if (openDoor2 === losePath) {
 				setTimeout(() => { switchAndLose(); }, 3500)
 			} else {
 				setTimeout(() => { switchAndWin(); }, 3500)
 			}
-		} else if (doorImage2.src === losePath()) {
+		} else if (doorImage2.src === losePath) {
 			row2.hidden = true;
 			instructions.innerHTML = "You switched to door 1"
 			setTimeout(() => { instructions.innerHTML =
 			"Revealing your chosen door..."; }, 1000);
 			setTimeout(() => { doorImage1.src = openDoor1; }, 2500);
-			if (openDoor1 === losePath()) {
+			if (openDoor1 === losePath) {
 				setTimeout(() => { switchAndLose(); }, 3500)
 			} else {
 				setTimeout(() => { switchAndWin(); }, 3500)
@@ -279,11 +283,11 @@ doorImage3.onclick = () => {
 	}
 	switchChoiceNo.onclick = () => {
 		row2.hidden = true;
-		instructions.innerHTML = "Your choice is still door3"
+		instructions.innerHTML = "Your choice is still door 3"
 		setTimeout(() => { instructions.innerHTML =
 		"Revealing your chosen door..."; }, 1000);
 		setTimeout(() => { doorImage3.src = openDoor3; }, 2500);
-		if (openDoor3 === losePath()) {
+		if (openDoor3 === losePath) {
 			setTimeout(() => { noSwitchAndLose(); }, 3500)
 		} else {
 			setTimeout(() => { noSwitchAndWin(); }, 3500)
