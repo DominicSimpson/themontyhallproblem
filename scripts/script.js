@@ -17,12 +17,27 @@ const NoSwitchAndWin = document.getElementById("NoSwitchAndWin");
 const NoSwitchAndLose = document.getElementById("NoSwitchAndLose");
 
 // Image of Car
-const winPath =
-"https://image.flaticon.com/icons/svg/3118/3118467.svg";
-// Image of Goat
-const losePath =
-"https://image.flaticon.com/icons/svg/836/836069.svg";
+const winPath = function show_image1(src, width, height, alt) {
+  var img1 = document.createElement("images/sportscar.jpg");
+  img1.src = src;
+  img1.width = width;
+  img1.height = height;
+  img1.alt = alt;
 
+  // This next line will just add it to the <body> tag
+  document.body.appendChild(img1);
+}
+// Image of Goat
+const losePath = function show_image2(src, width, height, alt) {
+  var img2 = document.createElement("images/goat.jpg");
+  img2.src = src;
+  img2.width = width;
+  img2.height = height;
+  img2.alt = alt;
+
+  // This next line will just add it to the <body> tag
+  document.body.appendChild(img2);
+}
 // Variables for shuffling the doors
 var openDoor1, openDoor2, openDoor3, winner;
 
@@ -76,11 +91,11 @@ doorImage1.onclick = () => {
 	},1000);
 
 	// Opening a door which has a goat behind it.
-	if (openDoor2 === losePath) {
+	if (openDoor2 === losePath()) {
 		setTimeout(() =>
 		{ doorImage2.src = openDoor2; }, 2000);
 
-	} else if (openDoor3 === losePath) {
+	} else if (openDoor3 === losePath()) {
 		setTimeout(() =>
 		{ doorImage3.src = openDoor3; }, 2000);
 	}
@@ -90,8 +105,7 @@ doorImage1.onclick = () => {
 
 		// If the opened door is door2, forming a
 		// suitable dialogue.
-		if (doorImage2.src ===
-		"https://image.flaticon.com/icons/svg/836/836069.svg"){
+		if (doorImage2.src === losePath()){
 			row2.hidden = true;
 			instructions.innerHTML = "You switched to door3";
 			setTimeout(()=>{
