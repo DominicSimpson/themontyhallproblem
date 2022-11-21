@@ -1,23 +1,23 @@
 // Declaring global variables
-const body = document.getElementById("body");
-const instructions = document.getElementById("instructions");
-const row1 = document.getElementById("row1");
-const row2 = document.getElementById("row2");
-const doorOne = document.getElementById("d1");
-const doorTwo = document.getElementById("d2");
-const doorThree = document.getElementById("d3");
-const switchChoiceYes = document.getElementById("btn-1");
-const switchChoiceNo = document.getElementById("btn-2");
+const body = document.getElementById('body');
+const instructions = document.getElementById('instructions');
+const row1 = document.getElementById('row1');
+const row2 = document.getElementById('row2');
+const doorOne = document.getElementById('d1');
+const doorTwo = document.getElementById('d2');
+const doorThree = document.getElementById('d3');
+const switchChoiceYes = document.getElementById('btn-1');
+const switchChoiceNo = document.getElementById('btn-2');
 const doorImage1 = document.getElementById('door1');
 const doorImage2 = document.getElementById('door2');
 const doorImage3 = document.getElementById('door3');
-const SwitchAndWin = document.getElementById("switchAndWin");
-const SwitchAndLose = document.getElementById("switchAndLose");
-const NoSwitchAndWin = document.getElementById("NoSwitchAndWin");
-const NoSwitchAndLose = document.getElementById("NoSwitchAndLose");
+const SwitchAndWin = document.getElementById('switchAndWin');
+const SwitchAndLose = document.getElementById('switchAndLose');
+const NoSwitchAndWin = document.getElementById('NoSwitchAndWin');
+const NoSwitchAndLose = document.getElementById('NoSwitchAndLose');
 
 // Image of Car
-const winPath = function show_image1(src, width, height, alt) {
+let winPath = function show_image1(src, width, height, alt) {
   var img1 = document.createElement("images/sportscar.jpg");
   img1.src = src;
   img1.width = width;
@@ -28,7 +28,7 @@ const winPath = function show_image1(src, width, height, alt) {
   document.body.appendChild(img1);
 }
 // Image of Goat
-const losePath = function show_image2(src, width, height, alt) {
+let losePath = function show_image2(src, width, height, alt) {
   var img2 = document.createElement("images/goat.jpg");
   img2.src = src;
   img2.width = width;
@@ -46,7 +46,7 @@ let winner;
 
 
 
-// Hiding unnecessary elements
+// Hiding text at start
 
 row2.hidden = true;
 SwitchAndWin.hidden = true;
@@ -170,7 +170,7 @@ doorImage1.onclick = () => {
 
 
 
-const switchAndWin = () => {
+const switchAndWin = () => { // display the result of the player based on their choices
 	body.hidden = true;
 	switchAndWin.hidden = false;
 }
