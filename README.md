@@ -79,24 +79,7 @@ The second step was to consider the variables and functions that will be require
 
 
 ###### Pseudocode:                    
-```function winDoorGenerator() {
-winner variable = takes a randomly-generated number from 1 to 3 via Math.floor(Math.random() *3) method;
-if (winner equals 1) {
-openDoor1 = winPath;
-openDoor2 = losePath;
-openDoor3 = losePath;
-} else if (winner equals 2) {
-openDoor1 = losePath;
-openDoor2 = winPath;
-openDoor3 = losePath;
-}
-else winner equals 3 {
-openDoor1 = losePath;
-openDoor2 = losePath;
-openDoor3 = winPath;
-}
-```                              
-
+                        
 ```
 * hidden is a property in JavaScript that returns a boolean *
 * each of these callback functions display the result to the player depending on their choices after asynchronous setTimeouts
