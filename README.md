@@ -128,6 +128,6 @@ const noSwitchAndLose = () => {
   NoSwitchAndLose hidden is revealed (equal to false): "You Lost - since you didn't switch, your chances of winning were only 33%.
   			Play again to redefine your luck.";
 }
-
+```
 
 ---
