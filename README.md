@@ -66,22 +66,15 @@ The second step was to consider the variables and functions that will be require
 | Functions                       | Description                                                               | Type                  |
 | -------------                   |:-------------:                                                            | -----:                |
 | winDoorGenerator                | Generates the winning door based on random math number 1-3                | Function              |           
-| doorImage1                      |                                                                           | Callback              |
-| doorImage2                      |                                                                           | Callback              |
-| doorImage3                      |                                                                           | Callback              |
-| switchChoiceYes                 |                                                                           | Callback              |
-| switchChoiceNo                  |                                                                           | Callback              |
-
-|
+| doorImage1                      | Event listener for door 1                                                 | Callback              |
+| doorImage2                      | Event listener for door 2                                                 | Callback              |
+| doorImage3                      | Event listener for door 3                                                 | Callback              |
+| switchChoiceYes                 | Displays respective text for door chosen and result                       | Callback              |
+| switchChoiceNo                  | Displays respective text for door chosen and result                       | Callback              |
 
 
-
- 
-
-
-
-
-
-
-
+| Pseudocode:                     |
+| ```function winDoorGenerator() {
+ stuff here
+}```                              |
 ---
