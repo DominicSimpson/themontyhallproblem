@@ -99,11 +99,12 @@ openDoor3 = winPath;
 
 ```
 * hidden is a property in JavaScript that returns a boolean *
-* each of these callback functions display the result to the player depending on their choices
+* each of these callback functions display the result to the player depending on their choices after asynchronous setTimeouts
 
 const switchAndWin = () => {
   body.hidden is equal to true;
-  SwitchAndWin hidden is revealed (equal to false);
+  SwitchAndWin hidden is revealed (equal to false): "Congratulations - you made the right choice by switching to another door!</p>
+			<p>By switching, you increased your probability of winning to 0.67 / two-thirds / 66.6666666%."
 }
 const switchAndLose = () => {
   body.hidden is equal to true;
