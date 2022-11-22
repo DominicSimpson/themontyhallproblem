@@ -109,15 +109,15 @@ const switchAndWin = () => {
 
 const switchAndLose = () => {
   body.hidden is equal to true;
-  SwitchAndLose hidden is revealed (equal to false): "Commiserations - the chances of you winning was 0.67 / two-thirds / 66.6666666% 
-  			since you switched to another door, but unfortunately you still lost. Bad luck.
-			Play again to redefine your luck.";
+  SwitchAndLose hidden is revealed (equal to false): "Commiserations - the chances of you winning was 
+  			0.67 / two-thirds / 66.6666666% since you switched to another door, but unfortunately you still lost. 
+			Bad luck. Play again to redefine your luck.";
 }
 
 const noSwitchAndWin = () => {
   body.hidden is equal to true;
   NoSwitchAndWin hidden is revealed (equal to false): "Congratulations - you are a very lucky person!
-			The probability of you winning was only 0.33 because you didn't switch to another door ,yet you still won.
+			The probability of you winning was only 0.33 because you didn't switch to another door, yet you still won.
 			If you had switched doors, you would've increased your probability 
 			of winning to 0.67 / two-thirds / 66.6666666%.";
 		
