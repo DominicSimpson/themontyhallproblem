@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<head>
-	<title>MontyHall</title>
-	<link rel="stylesheet" href="css/style.css">
-</head>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<link rel="stylesheet" href="css/style.css">
+		<title>The Monty Hall Problem</title>
+	</head>
 <body>
 	<div id="body">
 		<header>
-			<h1>Welcome to Monty Hall Problem</h1>
+			<h1>Welcome to Monty Hall game</h1>
 		</header>
 		<div id="instructions" class="instructions">
 			<div id="row1" class="row1">Please Select a door</div>
 			<div id="d1">You selected door1</div>
-			<div id="d2">You selected doogit r2</div>
+			<div id="d2">You selected door2</div>
 			<div id="d3">You selected door3</div>
 			<div id="row2" class="row2">
-				<p>Ok, I'm opening another door</p>
-				<p>Do you want to switch?</p>
+				<p>I've opened another door instead. As you can see, there is a goat.</p>
+				<p>Do you want to switch to another door?</p>
 				<div class="buttons">
 					<button id="btn-1">Yes</button>
 					<button id="btn-2">No</button>
@@ -33,24 +37,26 @@
 
 		</main>
 
-		<div id="switchAndWin" class="result">
+		<div id="SwitchAndWin" class="result" style="display: none">
 			<p>Congratulations - you made the right choice by switching to another door!</p>
 			<p>By switching, you increased your probability of winning to 0.67 / two-thirds / 66.6666666%.</p>
+			<p>A sportscar is yours.</p>
 		</div>
 	
-		<div id="switchAndLose" class="result">
+		<div id="SwitchAndLose" class="result" style="display: none">
 			<p>Commiserations - the chances of you winning was 0.67 / two-thirds / 66.6666666% since you switched to another door, 
 				but unfortunately still lost. Bad luck.</p>
 			<p>Play again to redefine your luck</p>
 		</div>
 	
-		<div id="NoSwitchAndWin" class="result">
+		<div id="NoSwitchAndWin" class="result" style="display: none">
 			<p>Congratulations - you are a very lucky person!</p>
 			<p>The probability of you winning was only 0.33 because you didn't switch to another door ,yet you still won.
 			If you had switched doors, you would've increased your probability of winning to 0.67 / two-thirds / 66.6666666%.</p>
+			<p> A sportscar is yours.</p>
 		</div>
 
-		<div id="NoSwitchAndLose" class="result">
+		<div id="NoSwitchAndLose" class="result" style="display: none">
 			<p>You Lost - since you didn't switch, your chances of winning were only 33%</p>
 			<p>Play again to redefine your luck</p>
 		</div>
