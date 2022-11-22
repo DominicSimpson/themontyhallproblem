@@ -84,17 +84,7 @@ doorImage1.onclick = () => {
 	pathSrc =  "images/goat.jpg";
 
 	document.getElementById("door3").src = pathSrc;
-	// Opening a door which has a goat behind it.
-	/*if (openDoor2 === losePath) {
-		setTimeout(() =>
-		{ doorImage2.src = openDoor2; }, 2000);
 
-	} else if (openDoor3 === losePath) {
-		setTimeout(() =>
-		{ doorImage3.src = openDoor3; }, 2000);
-	}
-*/
-	//Event listener if the player opts to switch
 	switchChoiceYes.onclick = () => {
 
 		pathSrc = '';
@@ -114,45 +104,6 @@ doorImage1.onclick = () => {
 		switchChoiceYes.style.display = "none";
 		switchChoiceNo.style.display = "none";
 		row2.style.display = "none";
-		// If the opened door is door2, forming a
-		// suitable dialogue.
-		/*if (doorImage2.src === losePath){
-			row2.hidden = true;
-			instructions.innerHTML = "You switched to Door 3";
-			setTimeout(()=>{
-				instructions.innerHTML =
-				"Revealing your chosen door...";
-			},1000);
-
-			// Opening the chosen door
-			setTimeout(() =>
-			{ doorImage3.src = openDoor3; }, 2500);
-
-			//Conditions to display the result page
-			if (openDoor3 === losePath) {
-				setTimeout(() => { switchAndLose(); }, 3500)
-			} else {
-				setTimeout(() => { switchAndWin(); }, 3500)
-			}
-		}
-		//If the opened door is door3, forming a suitable dialogue.
-		else if (doorImage3.src === losePath) {
-			row2.hidden = true;
-			instructions.innerHTML = "You switched to door 2";
-			setTimeout(()=>{
-				instructions.innerHTML =
-				"Revealing your chosen door...";
-			},1000);
-			
-			// Opening the chosen door
-			setTimeout(() => { doorImage2.src = openDoor2; }, 2500);
-			//Conditions to display the result page
-			if (openDoor2 === losePath) {
-				setTimeout(() => { switchAndLose(); }, 3500)
-			} else {
-				setTimeout(() => { switchAndWin(); }, 3500)
-			}
-		}*/
 	}
 
 	//Event listener if the player does not opts to switch
@@ -177,21 +128,7 @@ doorImage1.onclick = () => {
 		switchChoiceYes.style.display = "none";
 		switchChoiceNo.style.display = "none";
 		row2.style.display = "none";
-		// row2.hidden = true;
-		// instructions.innerHTML = "Your choice is still door 1";
-		// setTimeout(() =>
-		// { instructions.innerHTML =
-		// 	"Revealing your chosen door..."; }, 1000);
-		//
-		// // Opening the chosen door
-		// setTimeout(() => { doorImage1.src = openDoor1; }, 2500);
-		//
-		// // Conditions to display the result page
-		// if (openDoor1 === losePath) {
-		// 	setTimeout(() => { noSwitchAndLose(); }, 3500)
-		// } else {
-		// 	setTimeout(() => { noSwitchAndWin(); }, 3500)
-		// }
+
 	}
 }
 
@@ -217,59 +154,137 @@ const noSwitchAndLose = () => {
 
 
 doorImage2.onclick = () => {
+
+	SwitchAndLose.style.display = "none";
+	SwitchAndWin.style.display = "none";
+	switchChoiceYes.style.display = "block";
+	switchChoiceNo.style.display = "block";
+	row2.style.display = "block";
+	let pathCheck = Math.floor(Math.random() * 3);
+	let pathSrc =  "";
+	document.getElementById("door1").src = "images/door.jpg";
+	document.getElementById("door2").src = "images/door.jpg";
+	document.getElementById("door3").src = "images/door.jpg";
+
+	// Revealing necessary elements for dialogue
 	row1.hidden = true;
-	doorTwo.hidden = false;
-	setTimeout(() => { doorTwo.hidden = true; }, 1000);
-	setTimeout(() => { row2.hidden = false; }, 1000)
+	doorTwo.hidden = true;
+	setTimeout(()=>{
+		doorTwo.hidden = true;
+	},1000);
+	setTimeout(()=>{
+		row2.hidden = false;
+	},1000);
 
-	if (openDoor1 === losePath) {
-		setTimeout(() =>
-		{ doorImage1.src = openDoor1; }, 2000);
+	pathSrc =  "images/goat.jpg";
 
-	} else if (openDoor3 === losePath) {
-		setTimeout(() =>
-		{ doorImage3.src = openDoor3; }, 2000);
-	}
+	document.getElementById("door3").src = pathSrc;
 
 	switchChoiceYes.onclick = () => {
-		if (doorImage1.src === losePath) {
-			row2.hidden = true;
-			instructions.innerHTML = "You switched to door 3"
-			setTimeout(() =>
-			{ instructions.innerHTML =
-				"Revealing your chosen door..."; }, 1000);
-			setTimeout(() => { doorImage3.src = openDoor3; }, 2500);
-			if (openDoor3 === losePath) {
-				setTimeout(() => { switchAndLose(); }, 3500)
-			} else {
-				setTimeout(() => { switchAndWin(); }, 3500)
-			}
-		} else if (doorImage3.src === losePath) {
-			row2.hidden = true;
-			instructions.innerHTML = "You switched to door 1";
-			setTimeout(() => { instructions.innerHTML
-				= "Revealing your chosen door..."; }, 1000);
-			setTimeout(() => { doorImage1.src = openDoor1; }, 2500);
-			if (openDoor1 === losePath) {
-				setTimeout(() => { switchAndLose(); }, 3500)
-			} else {
-				setTimeout(() => { switchAndWin(); }, 3500)
-			}
+
+		pathSrc = '';
+		if(pathCheck===1){
+			SwitchAndLose.style.display = "block";
+			pathSrc =  "images/goat.jpg";
+		}else if(pathCheck===2){
+			SwitchAndWin.style.display = "block";
+			pathSrc =  "images/sportscar.jpg";
+		}else{
+			SwitchAndLose.style.display = "block";
+			pathSrc =  "images/goat.jpg";
 		}
+
+		document.getElementById("door1").src = pathSrc;
+		document.getElementById("door3").src = "images/door.jpg";
+		switchChoiceYes.style.display = "none";
+		switchChoiceNo.style.display = "none";
+		row2.style.display = "none";
 	}
+
+	//Event listener if the player does not opts to switch
 	switchChoiceNo.onclick = () => {
-		row2.hidden = true;
-		instructions.innerHTML = "Your choice is still door2"
-		setTimeout(() => { instructions.innerHTML =
-			"Revealing your chosen door..."; }, 1000);
-		setTimeout(() => { doorImage2.src = openDoor2; }, 2500);
-		if (openDoor2 === losePath) {
-			setTimeout(() => { noSwitchAndLose(); }, 3500)
-		} else {
-			setTimeout(() => { noSwitchAndWin(); }, 3500)
+		SwitchAndLose.style.display = "none";
+		SwitchAndWin.style.display = "none";
+		document.getElementById("door1").src = "images/door.jpg";
+		document.getElementById("door3").src = "images/door.jpg";
+		pathSrc = '';
+		if(pathCheck===1){
+			NoSwitchAndLose.style.display = "block";
+			pathSrc =  "images/goat.jpg";
+		}else if(pathCheck===2){
+			NoSwitchAndWin.style.display = "block";
+			pathSrc =  "images/sportscar.jpg";
+		}else{
+			NoSwitchAndLose.style.display = "block";
+			pathSrc =  "images/goat.jpg";
 		}
+
+		document.getElementById("door2").src = pathSrc;
+		switchChoiceYes.style.display = "none";
+		switchChoiceNo.style.display = "none";
+		row2.style.display = "none";
+
 	}
+
+
+	// row1.hidden = true;
+	// doorTwo.hidden = false;
+	// setTimeout(() => { doorTwo.hidden = true; }, 1000);
+	// setTimeout(() => { row2.hidden = false; }, 1000)
+
+	// if (openDoor1 === losePath) {
+	// 	setTimeout(() =>
+	// 	{ doorImage1.src = openDoor1; }, 2000);
+
+	// } else if (openDoor3 === losePath) {
+	// 	setTimeout(() =>
+	// 	{ doorImage3.src = openDoor3; }, 2000);
+	// }
+
+	// switchChoiceYes.onclick = () => {
+	// 	if (doorImage1.src === losePath) {
+	// 		row2.hidden = true;
+	// 		instructions.innerHTML = "You switched to door 3"
+	// 		setTimeout(() =>
+	// 		{ instructions.innerHTML =
+	// 			"Revealing your chosen door..."; }, 1000);
+	// 		setTimeout(() => { doorImage3.src = openDoor3; }, 2500);
+	// 		if (openDoor3 === losePath) {
+	// 			setTimeout(() => { switchAndLose(); }, 3500)
+	// 		} else {
+	// 			setTimeout(() => { switchAndWin(); }, 3500)
+	// 		}
+	// 	} else if (doorImage3.src === losePath) {
+	// 		row2.hidden = true;
+	// 		instructions.innerHTML = "You switched to door 1";
+	// 		setTimeout(() => { instructions.innerHTML
+	// 			= "Revealing your chosen door..."; }, 1000);
+	// 		setTimeout(() => { doorImage1.src = openDoor1; }, 2500);
+	// 		if (openDoor1 === losePath) {
+	// 			setTimeout(() => { switchAndLose(); }, 3500)
+	// 		} else {
+	// 			setTimeout(() => { switchAndWin(); }, 3500)
+	// 		}
+	// 	}
+	// }
+	// switchChoiceNo.onclick = () => {
+	// 	row2.hidden = true;
+	// 	instructions.innerHTML = "Your choice is still door2"
+	// 	setTimeout(() => { instructions.innerHTML =
+	// 		"Revealing your chosen door..."; }, 1000);
+	// 	setTimeout(() => { doorImage2.src = openDoor2; }, 2500);
+	// 	if (openDoor2 === losePath) {
+	// 		setTimeout(() => { noSwitchAndLose(); }, 3500)
+	// 	} else {
+	// 		setTimeout(() => { noSwitchAndWin(); }, 3500)
+	// 	}
+	// }
 }
+
+
+
+
+
 doorImage3.onclick = () => {
 	row1.hidden = true;
 	doorThree.hidden = false;
