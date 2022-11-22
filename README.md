@@ -51,6 +51,8 @@ The second step was to consider the variables and functions that will be require
 | instructions                    | Text instruction for user                                                 | DOM variable          |
 | row1                            | Text urging user to select a door                                         | DOM variable          |
 | row2                            | Text querying if user wants to switch (includes yes/no buttons)           | DOM variable          |
+| winPath                         | If the user chooses door with car                                         | Variable              |
+| losePath                        | If the user chooses door with goat                                        | Variable              |
 
  
  totalD  oors                      | the total amount of doors (i.e. 3)                                      | variable
