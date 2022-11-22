@@ -34,18 +34,21 @@
 
 The second step was to consider the variables and functions that will be required when writing the code and brainstorm them. The first chart below just contains those functions and variables relating to the doors. 
 
-| Door Variables and functions    | What                                                                    | Type                  |
+| Door Variables and functions    | Description                                                               | Type                |
 | -------------                   |:-------------:                                                          | -----:                |
-| doors                           | the doors                                                               | array
-| totalDoors                      | the total amount of doors (i.e. 3)                                      | variable
+| doorOne                         | Door 1                                                                  | variable              |
+| doorTwo                         | Door 2                                                                  | variable              |
+| doorThree                       | Door 3                                                                  | variable              |
+| swithChoiceYes                  | Contestant chooses to switch to other door                              | variable              |
+| switchChoiceNo                  | Contestant choose to stay at original door                              | variable              |
+ 
+ totalD  oors                      | the total amount of doors (i.e. 3)                                      | variable
 | pickDoor                        | the door that the contestant picks                                      | function              | 
 | pickedDoor                      | the door that the contestant picks                                      | variable              | 
 | winningDoor                     | the door that has the car                                               |                       |
 | revealNotCorrectDoor            | the two doors that don't contain the car                                | function              |
 | doorReveal                      | the door that the host reveals                                          |                       |
 | playerSwitch                    | ?                                                                       |                       |
-| stayOnDoor                      | contestant chooses to stay with that door                               | Note: button in HTML  |
-| switchOtherDoor                 | contestant chooses to switch to other door                              | Note: button in HTML  |   
 | newPick                         | the door that wasn't chosen by the contestant or chosen by the host     |                       |
 
 | Variable                        | What                                                                    | Type                  |
