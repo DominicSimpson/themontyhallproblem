@@ -40,6 +40,8 @@ The second step was to consider the variables and functions that will be require
 | doorTwo                         | Door 2                                                                    | DOM variable          |
 | doorThree                       | Door 3                                                                    | DOM variable          |
 | doorImage1                      | Image of door 1                                                           | DOM variable          |
+| doorImage2                      | Image of door 2                                                           | DOM variable          |
+| doorImage3                      | Image of door 3                                                           | DOM variable          |
 | swithChoiceYes                  | Contestant chooses to switch to other door                                | DOM variable          |
 | switchChoiceNo                  | Contestant choose to stay at original door                                | DOM variable          |
 | SwitchAndWin                    | If the contestant switches to another door which holds the car ('wins')   | DOM variable          |
