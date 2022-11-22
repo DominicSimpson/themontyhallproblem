@@ -219,7 +219,7 @@ doorImage2.onclick = () => {
 			pathSrc =  "images/goat.jpg";
 		}
 
-		document.getElementById("door2").src = pathSrc;
+		document.getElementById("door3").src = pathSrc;
 		switchChoiceYes.style.display = "none";
 		switchChoiceNo.style.display = "none";
 		row2.style.display = "none";
