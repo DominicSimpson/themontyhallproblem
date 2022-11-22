@@ -36,6 +36,7 @@ The second step was to consider the variables and functions that will be require
 
 | Variables                       | Description                                                               | Type                  |
 | -------------                   |:-------------:                                                            | -----:                |
+| body                            | Stores variable from body ID in HTML                                      | DOM variable          |
 | doorOne                         | Door 1                                                                    | DOM variable          |
 | doorTwo                         | Door 2                                                                    | DOM variable          |
 | doorThree                       | Door 3                                                                    | DOM variable          |
@@ -69,8 +70,12 @@ The second step was to consider the variables and functions that will be require
 | doorImage1                      | Event listener for door 1                                                 | Callback              |
 | doorImage2                      | Event listener for door 2                                                 | Callback              |
 | doorImage3                      | Event listener for door 3                                                 | Callback              |
-| switchChoiceYes                 | Displays respective text for door chosen and result                       | Callback              |
-| switchChoiceNo                  | Displays respective text for door chosen and result                       | Callback              |
+| switchChoiceYes                 | Displays respective text if player agrees to switch                       | Callback              |
+| switchChoiceNo                  | Displays respective text if player refuses to switch                      | Callback              |
+| switchAndWin                    | Displays the result if the player switches and wins                       | Callback              |
+| switchAndLose                   | Displays the result if the player switches and loses                      | Callback              |
+| noSwitchAndWin                  | Displays the result if player doesn't switch but still wins               | Callback              |
+| noSwitchAndLose                 | Displays the result if player doesn't switch and loses                    | Callback              |
 
 
 ###### Pseudocode:                    
@@ -91,7 +96,29 @@ openDoor2 = losePath;
 openDoor3 = winPath;
 }
 ```                              
+
+```
+* hidden is a property in JavaScript that returns a boolean *
+* each of these callback functions display the result to the player depending on their choices
+
+const switchAndWin = () => {
+  body.hidden is equal to true;
+  SwitchAndWin hidden is revealed (equal to false);
+}
+const switchAndLose = () => {
+  body.hidden is equal to true;
+  SwitchAndLose hidden is revealed (equal to false);
+}
+
+const noSwitchAndWin = () => {
+  body.hidden is equal to true;
+  NoSwitchAndWin hidden is revealed (equal to false);
+}
+
+const noSwitchAndLose = () => {
+  body.hidden is equal to true;
+  NoSwitchAndLose hidden is revealed (equal to false);
+}
+
+
 ---
-
-const SwitchAndWin = () => {
-
