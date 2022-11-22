@@ -34,15 +34,18 @@
 
 The second step was to consider the variables and functions that will be required when writing the code and brainstorm them. The first chart below just contains those functions and variables relating to the doors. 
 
-| Variables                       | Description                                                               | Type                |
+| Variables                       | Description                                                               | Type                  |
 | -------------                   |:-------------:                                                            | -----:                |
 | doorOne                         | Door 1                                                                    | DOM variable          |
 | doorTwo                         | Door 2                                                                    | DOM variable          |
 | doorThree                       | Door 3                                                                    | DOM variable          |
+| doorImage1                      | Image of door 1                                                           | DOM variable          |
 | swithChoiceYes                  | Contestant chooses to switch to other door                                | DOM variable          |
 | switchChoiceNo                  | Contestant choose to stay at original door                                | DOM variable          |
-| SwitchAndWin                    | If the contestant switches to another door which holds the car            | DOM variable          |
-| SwitchAndLose                   | If the contestant switches to another door which contains a goat          | DOM variable          |
+| SwitchAndWin                    | If the contestant switches to another door which holds the car ('wins')   | DOM variable          |
+| SwitchAndLose                   | If the contestant switches to another door which contains a goat ('loses')| DOM variable          |
+| NoSwitchAndWin                  | If the contestant doesn't switch doors, but still wins                    | DOM variable          |
+| NoSwitchAndLose                 | If the contestant doesn't switch doors, and loses                         | DOM variable          |
 
  
  totalD  oors                      | the total amount of doors (i.e. 3)                                      | variable
