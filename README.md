@@ -34,13 +34,16 @@
 
 The second step was to consider the variables and functions that will be required when writing the code and brainstorm them. The first chart below just contains those functions and variables relating to the doors. 
 
-| Door Variables and functions    | Description                                                               | Type                |
-| -------------                   |:-------------:                                                          | -----:                |
-| doorOne                         | Door 1                                                                  | variable              |
-| doorTwo                         | Door 2                                                                  | variable              |
-| doorThree                       | Door 3                                                                  | variable              |
-| swithChoiceYes                  | Contestant chooses to switch to other door                              | variable              |
-| switchChoiceNo                  | Contestant choose to stay at original door                              | variable              |
+| Variables                       | Description                                                               | Type                |
+| -------------                   |:-------------:                                                            | -----:                |
+| doorOne                         | Door 1                                                                    | DOM variable          |
+| doorTwo                         | Door 2                                                                    | DOM variable          |
+| doorThree                       | Door 3                                                                    | DOM variable          |
+| swithChoiceYes                  | Contestant chooses to switch to other door                                | DOM variable          |
+| switchChoiceNo                  | Contestant choose to stay at original door                                | DOM variable          |
+| SwitchAndWin                    | If the contestant switches to another door which holds the car            | DOM variable          |
+| SwitchAndLose                   | If the contestant switches to another door which contains a goat          | DOM variable          |
+
  
  totalD  oors                      | the total amount of doors (i.e. 3)                                      | variable
 | pickDoor                        | the door that the contestant picks                                      | function              | 
