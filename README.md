@@ -92,3 +92,6 @@ openDoor3 = winPath;
 }
 ```                              
 ---
+
+const SwitchAndWin = () => {
+
