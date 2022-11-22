@@ -53,32 +53,18 @@ The second step was to consider the variables and functions that will be require
 | row2                            | Text querying if user wants to switch (includes yes/no buttons)           | DOM variable          |
 | winPath                         | If the user chooses door with car                                         | Variable              |
 | losePath                        | If the user chooses door with goat                                        | Variable              |
+| openDoor1                       | Shuffles door 1                                                           | Variable              |
+| openDoor2                       | Shuffles door 2                                                           | Variable              |
+| openDoor3                       | Shuffles door 3                                                           | Variable              |
+| winner                          | Winning door                                                              | Variable              |
+| switchAndWin                    | Displays the result of the player switching and winning                   | Variable              |
+| switchAndLose                   | Displays the result of the player switching and losing                    | Variable              |
+| noSwitchAndWin                  | Displays the result of the player not switching but still winning         | Variable              |
+| noSwitchAndLose                 | Displays the result of the player not switching and losing                | Variable              |
+
 
  
- totalD  oors                      | the total amount of doors (i.e. 3)                                      | variable
-| pickDoor                        | the door that the contestant picks                                      | function              | 
-| pickedDoor                      | the door that the contestant picks                                      | variable              | 
-| winningDoor                     | the door that has the car                                               |                       |
-| revealNotCorrectDoor            | the two doors that don't contain the car                                | function              |
-| doorReveal                      | the door that the host reveals                                          |                       |
-| playerSwitch                    | ?                                                                       |                       |
-| newPick                         | the door that wasn't chosen by the contestant or chosen by the host     |                       |
 
-| Variable                        | What                                                                    | Type                  |
-| -------------                   |:-------------:                                                          | -----:                |
-| createElements                  | set up door, car, and goats                                             |                       |
-| prize                           | whatever is behind each door                                            |   ?                   |
-| gameStatus                      | what status the game is in                                              |                       |
-| options                         | ?                                                                       |                       |
-| hasWon                          | whether the contestant has chose the correct door                       |                       |
-| startAgain                      | reset and try again                                                     |                       |
-| outcomeDisplay                  | displays if user was successful or not                                  |                       |
-| statistics                      | stores statistics on the user's results; contains the below items       | object                |
-| totalSwitches                   | how many times the contestant agreed to switch to another door          |                       |
-| totalStays                      | how many times the contestant agreed to stay with their original choice |                       |
-| totalSwitchWins                 | how many times the contestant has switched and won the car              |                       |
-| totalStayWins                   | how many times the contestant has stayed and won the car                |                       |
-| clearStatistics                 | clears user's statistics                                                | function              |
 
 
 
