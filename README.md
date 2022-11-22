@@ -32,7 +32,7 @@
 
 ![MontyHallProblem_Visualisation3](https://user-images.githubusercontent.com/52511353/202874454-97af8b54-72a1-4c89-a550-9c791c5c01a4.jpg)
 
-The second step was to consider the variables and functions that will be required when writing the code and brainstorm them. The first chart below just contains those functions and variables relating to the doors. 
+The second step was to consider the variables and functions that will be required when writing the code and brainstorm them. The first chart below just contains those functions and variables relating to the doors. In addition, I have added some pseudocode to show my approach.
 
 | Variables                       | Description                                                               | Type                  |
 | -------------                   |:-------------:                                                            | -----:                |
@@ -75,7 +75,7 @@ The second step was to consider the variables and functions that will be require
 
 ###### Pseudocode:                    
 ```function winDoorGenerator() {
-winner variable = takes a number from 1 to 3 via Math.floor(Math.random() *3) method;
+winner variable = takes a randomly-generated number from 1 to 3 via Math.floor(Math.random() *3) method;
 if (winner equals 1) {
 openDoor1 = winPath;
 openDoor2 = losePath;
