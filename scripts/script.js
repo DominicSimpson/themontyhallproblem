@@ -21,18 +21,6 @@ let submitSwitchAndLoseReset = document.getElementById('submit-switchandlose');
 let submitNoSwitchAndWinReset = document.getElementById('submit-noswitchandwin');
 let submitNoSwitchAndLoseReset = document.getElementById('submit-noswitchandlose');
 
-let displaySubmit = [];
-
-
-
-
-
-// Variables for shuffling the doors
-let openDoor1;
-let openDoor2;
-let openDoor3;
-let winner;
-
 
 
 // Hiding text at start
@@ -61,293 +49,347 @@ const noSwitchAndLose = () => {
 	NoSwitchAndLose.hidden = false;
 }
 
-// Event listener for door 1
+// Function for each door result
 
-doorImage1.onclick = () => {
+
+function doorResult(doorNumber) {
+
 	SwitchAndLose.style.display = "none";
 	SwitchAndWin.style.display = "none";
 	switchChoiceYes.style.display = "block";
 	switchChoiceNo.style.display = "block";
 	row2.style.display = "block";
-	let pathCheck1 = Math.floor(Math.random() * 3);
-	let pathSrc1 =  "";
+	let pathCheck = Math.floor(Math.random() * 3);
+	let pathSrc =  "";
 	document.getElementById("door1").src = "images/door.jpg";
 	document.getElementById("door2").src = "images/door.jpg";
 	document.getElementById("door3").src = "images/door.jpg";
+
 
 	row1.hidden = true;
 	doorOne.hidden = true;
-	setTimeout(()=>{
-		doorOne.hidden = true;
-	},1000);
-	setTimeout(()=>{
-		row2.hidden = false;
-	},1000);
-
-	pathSrc1 =  "images/goat.jpg";
-
-	document.getElementById("door3").src = pathSrc1;
-
-	//Event listener if the player opts to switch
-
-
-	switchChoiceYes.onclick = () => {
-
-		pathSrc1 = '';
-		if (pathCheck1 === 1){
-			SwitchAndLose.style.display = "block";
-			pathSrc1 =  "images/goat.jpg";
-		} else if (pathCheck1 === 2){
-			SwitchAndWin.style.display = "block";
-			pathSrc1 =  "images/sportscar.jpg";
-		} else {
-			SwitchAndLose.style.display = "block";
-			pathSrc1 =  "images/goat.jpg";
-		}
-
-		document.getElementById("door2").src = pathSrc1;
-		document.getElementById("door3").src = "images/door.jpg";
-		switchChoiceYes.style.display = "none";
-		switchChoiceNo.style.display = "none";
-		row2.style.display = "none";
-	}
-
-	// Event listener if the player does not opts to switch
-	switchChoiceNo.onclick = () => {
-		SwitchAndLose.style.display = "none";
-		SwitchAndWin.style.display = "none";
-		document.getElementById("door2").src = "images/door.jpg";
-		document.getElementById("door3").src = "images/door.jpg";
-		pathSrc1 = '';
-		if (pathCheck1 === 1) {
-			NoSwitchAndLose.style.display = "block";
-			pathSrc1 =  "images/goat.jpg";
-		} else if (pathCheck1 === 2){
-			NoSwitchAndWin.style.display = "block";
-			pathSrc1 =  "images/sportscar.jpg";
-		} else {
-			NoSwitchAndLose.style.display = "block";
-			pathSrc1 =  "images/goat.jpg";
-		}
-
-		document.getElementById("door1").src = pathSrc1;
-		switchChoiceYes.style.display = "none";
-		switchChoiceNo.style.display = "none";
-		row2.style.display = "none";
-
-
-	}
-}
-
-
-// Event listener for door 2
-
-doorImage2.onclick = () => {
-
-	SwitchAndLose.style.display = "none";
-	SwitchAndWin.style.display = "none";
-	switchChoiceYes.style.display = "block";
-	switchChoiceNo.style.display = "block";
-	row2.style.display = "block";
-	let pathCheck2 = Math.floor(Math.random() * 3);
-	let pathSrc2 =  "";
-	document.getElementById("door1").src = "images/door.jpg";
-	document.getElementById("door2").src = "images/door.jpg";
-	document.getElementById("door3").src = "images/door.jpg";
-
-	// Revealing necessary elements for dialogue
-	row1.hidden = true;
 	doorTwo.hidden = true;
+	// doorThree.hidden = true;
 	setTimeout(()=>{
-		doorTwo.hidden = true;
+		doorNumber.hidden = true;
 	},1000);
 	setTimeout(()=>{
 		row2.hidden = false;
 	},1000);
 
-	pathSrc2 =  "images/goat.jpg";
+	pathSrc =  "images/goat.jpg";
 
-	document.getElementById("door3").src = pathSrc2;
+	document.getElementById("door3").src = pathSrc;
 
 	//Event listener if the player opts to switch
 
+
 	switchChoiceYes.onclick = () => {
 
-		pathSrc2 = '';
-		if (pathCheck2 === 1) {
+		pathSrc = '';
+		if (pathCheck === 1){
 			SwitchAndLose.style.display = "block";
-			pathSrc2 =  "images/goat.jpg";
-		} else if (pathCheck2 === 2){
+			pathSrc =  "images/goat.jpg";
+		} else if (pathCheck === 2){
 			SwitchAndWin.style.display = "block";
-			pathSrc2 =  "images/sportscar.jpg";
+			pathSrc =  "images/sportscar.jpg";
 		} else {
 			SwitchAndLose.style.display = "block";
-			pathSrc2 =  "images/goat.jpg";
+			pathSrc =  "images/goat.jpg";
 		}
 
-		document.getElementById("door1").src = pathSrc2;
+		document.getElementById("door2").src = pathSrc;
 		document.getElementById("door3").src = "images/door.jpg";
+
 		switchChoiceYes.style.display = "none";
 		switchChoiceNo.style.display = "none";
 		row2.style.display = "none";
 	}
 
-	//Event listener if the player does not opts to switch
-	switchChoiceNo.onclick = () => {
+	// Event listener if the player does not opt to switch
+
+		switchChoiceNo.onclick = () => {
 		SwitchAndLose.style.display = "none";
 		SwitchAndWin.style.display = "none";
-		document.getElementById("door1").src = "images/door.jpg";
+		document.getElementById("door2").src = "images/door.jpg";
 		document.getElementById("door3").src = "images/door.jpg";
-		pathSrc2 = '';
-		if (pathCheck2 === 1){
+		pathSrc = '';
+		if (pathCheck === 1) {
 			NoSwitchAndLose.style.display = "block";
-			pathSrc2 =  "images/goat.jpg";
-		} else if(pathCheck2 === 2){
+			pathSrc =  "images/goat.jpg";
+		} else if (pathCheck === 2){
 			NoSwitchAndWin.style.display = "block";
-			pathSrc2 =  "images/sportscar.jpg";
+			pathSrc =  "images/sportscar.jpg";
 		} else {
 			NoSwitchAndLose.style.display = "block";
-			pathSrc2 =  "images/goat.jpg";
+			pathSrc =  "images/goat.jpg";
 		}
 
-		document.getElementById("door2").src = pathSrc2;
+		document.getElementById(doorResult).src = pathSrc;
 		switchChoiceYes.style.display = "none";
 		switchChoiceNo.style.display = "none";
 		row2.style.display = "none";
 
 	}
 
-
-	// row1.hidden = true;
-	// doorTwo.hidden = false;
-	// setTimeout(() => { doorTwo.hidden = true; }, 1000);
-	// setTimeout(() => { row2.hidden = false; }, 1000)
-
-	// if (openDoor1 === losePath) {
-	// 	setTimeout(() =>
-	// 	{ doorImage1.src = openDoor1; }, 2000);
-
-	// } else if (openDoor3 === losePath) {
-	// 	setTimeout(() =>
-	// 	{ doorImage3.src = openDoor3; }, 2000);
-	// }
-
-	// switchChoiceYes.onclick = () => {
-	// 	if (doorImage1.src === losePath) {
-	// 		row2.hidden = true;
-	// 		instructions.innerHTML = "You switched to door 3"
-	// 		setTimeout(() =>
-	// 		{ instructions.innerHTML =
-	// 			"Revealing your chosen door..."; }, 1000);
-	// 		setTimeout(() => { doorImage3.src = openDoor3; }, 2500);
-	// 		if (openDoor3 === losePath) {
-	// 			setTimeout(() => { switchAndLose(); }, 3500)
-	// 		} else {
-	// 			setTimeout(() => { switchAndWin(); }, 3500)
-	// 		}
-	// 	} else if (doorImage3.src === losePath) {
-	// 		row2.hidden = true;
-	// 		instructions.innerHTML = "You switched to door 1";
-	// 		setTimeout(() => { instructions.innerHTML
-	// 			= "Revealing your chosen door..."; }, 1000);
-	// 		setTimeout(() => { doorImage1.src = openDoor1; }, 2500);
-	// 		if (openDoor1 === losePath) {
-	// 			setTimeout(() => { switchAndLose(); }, 3500)
-	// 		} else {
-	// 			setTimeout(() => { switchAndWin(); }, 3500)
-	// 		}
-	// 	}
-	// }
-	// switchChoiceNo.onclick = () => {
-	// 	row2.hidden = true;
-	// 	instructions.innerHTML = "Your choice is still door2"
-	// 	setTimeout(() => { instructions.innerHTML =
-	// 		"Revealing your chosen door..."; }, 1000);
-	// 	setTimeout(() => { doorImage2.src = openDoor2; }, 2500);
-	// 	if (openDoor2 === losePath) {
-	// 		setTimeout(() => { noSwitchAndLose(); }, 3500)
-	// 	} else {
-	// 		setTimeout(() => { noSwitchAndWin(); }, 3500)
-	// 	}
-	// }
 }
 
-// Event listener for door 3
 
-doorImage3.onclick = () => {
+// Event listeners for each door
 
-	SwitchAndLose.style.display = "none";
-	SwitchAndWin.style.display = "none";
-	switchChoiceYes.style.display = "block";
-	switchChoiceNo.style.display = "block";
-	row2.style.display = "block";
-	let pathCheck3 = Math.floor(Math.random() * 3);
-	let pathSrc3 =  "";
-	document.getElementById("door1").src = "images/door.jpg";
-	document.getElementById("door3").src = "images/door.jpg";
-	document.getElementById("door2").src = "images/door.jpg";
+doorImage1.onclick = () =>  {
+	doorResult("door1");
+}
+
+doorImage2.onclick = () =>  {
+	doorResult("door2");
+}
+
+doorImage3.onclick = () =>  {
+	doorResult("door3");
+}
 
 
-	// Revealing necessary elements for dialogue
-	row1.hidden = true;
-	doorThree.hidden = true;
-	setTimeout(()=>{
-		doorThree.hidden = true;
-	},1000);
-	setTimeout(()=>{
-		row2.hidden = false;
-	},1000);
+let listOfSubmitOptions = JSON.parse(localStorage.getItem("listOfSubmitOptions")) || [];
 
-	pathSrc3 =  "images/goat.jpg";
 
-	document.getElementById("door1").src = pathSrc3;
 
-	//Event listener if the player opts to switch
-
-	switchChoiceYes.onclick = () => {
-
-		pathSrc3 = '';
-		if (pathCheck3 === 1) {
-			SwitchAndLose.style.display = "block";
-			pathSrc3 =  "images/goat.jpg";
-		} else if (pathCheck3 === 2){
-			SwitchAndWin.style.display = "block";
-			pathSrc3 =  "images/sportscar.jpg";
-		} else {
-			SwitchAndLose.style.display = "block";
-			pathSrc3 =  "images/goat.jpg";
-		}
-
-		document.getElementById("door1").src = "images/door.jpg";
-		document.getElementById("door2").src = "images/door.jpg";
-		switchChoiceYes.style.display = "none";
-		switchChoiceNo.style.display = "none";
-		row2.style.display = "none";
+submitSwitchAndWinReset.addEventListener("click", function (){
+	if (listOfSubmitOptions = '') {
+	localStorage.setItem("each submit", listOfSubmitOptions + 1); // decrements one to the productNumbers variable
 	}
+});
 
-	//Event listener if the player does not opt to switch
-	switchChoiceNo.onclick = () => {
-		SwitchAndLose.style.display = "none";
-		SwitchAndWin.style.display = "none";
-		document.getElementById("door1").src = "";
-		document.getElementById("door2").src = "images/door.jpg";
-		pathSrc3 = '';
-		if (pathCheck3 === 1){
-			NoSwitchAndLose.style.display = "block";
-			pathSrc3 =  "images/goat.jpg";
-		}else if(pathCheck3 === 2){
-			NoSwitchAndWin.style.display = "block";
-			pathSrc3 =  "images/sportscar.jpg";
-		}else{
-			NoSwitchAndLose.style.display = "block";
-			pathSrc3 =  "images/goat.jpg";
-		}
-
-		document.getElementById("door3").src = pathSrc3;
-		switchChoiceYes.style.display = "none";
-		switchChoiceNo.style.display = "none";
-		row2.style.display = "none";
+submitSwitchAndLoseReset .addEventListener("click", function (){
+	if (listOfSubmitOptions = '') {
+	localStorage.setItem("each submit", listOfSubmitOptions + 1); // decrements one to the productNumbers variable
 	}
+});
+
+submitNoSwitchAndWinReset.addEventListener("click", function (){
+	if (listOfSubmitOptions = '') {
+	localStorage.setItem("each submit", listOfSubmitOptions + 1); // decrements one to the productNumbers variable
+	}
+});
+
+submitNoSwitchAndLoseReset.addEventListener("click", function (){
+	if (listOfSubmitOptions = '') {
+	localStorage.setItem("each submit", listOfSubmitOptions + 1); // decrements one to the productNumbers variable
+	}
+});
+
+
+
+
+
+// // Event listener for door 2
+
+// doorImage2.onclick = () => {
+
+// 	SwitchAndLose.style.display = "none";
+// 	SwitchAndWin.style.display = "none";
+// 	switchChoiceYes.style.display = "block";
+// 	switchChoiceNo.style.display = "block";
+// 	row2.style.display = "block";
+// 	let pathCheck2 = Math.floor(Math.random() * 3);
+// 	let pathSrc2 =  "";
+// 	document.getElementById("door1").src = "images/door.jpg";
+// 	document.getElementById("door2").src = "images/door.jpg";
+// 	document.getElementById("door3").src = "images/door.jpg";
+
+// 	// Revealing necessary elements for dialogue
+// 	row1.hidden = true;
+// 	doorTwo.hidden = true;
+// 	setTimeout(()=>{
+// 		doorTwo.hidden = true;
+// 	},1000);
+// 	setTimeout(()=>{
+// 		row2.hidden = false;
+// 	},1000);
+
+// 	pathSrc2 =  "images/goat.jpg";
+
+// 	document.getElementById("door3").src = pathSrc2;
+
+// 	//Event listener if the player opts to switch
+
+// 	switchChoiceYes.onclick = () => {
+
+// 		pathSrc2 = '';
+// 		if (pathCheck2 === 1) {
+// 			SwitchAndLose.style.display = "block";
+// 			pathSrc2 =  "images/goat.jpg";
+// 		} else if (pathCheck2 === 2){
+// 			SwitchAndWin.style.display = "block";
+// 			pathSrc2 =  "images/sportscar.jpg";
+// 		} else {
+// 			SwitchAndLose.style.display = "block";
+// 			pathSrc2 =  "images/goat.jpg";
+// 		}
+
+// 		document.getElementById("door1").src = pathSrc2;
+// 		document.getElementById("door3").src = "images/door.jpg";
+// 		switchChoiceYes.style.display = "none";
+// 		switchChoiceNo.style.display = "none";
+// 		row2.style.display = "none";
+// 	}
+
+// 	//Event listener if the player does not opts to switch
+// 	switchChoiceNo.onclick = () => {
+// 		SwitchAndLose.style.display = "none";
+// 		SwitchAndWin.style.display = "none";
+// 		document.getElementById("door1").src = "images/door.jpg";
+// 		document.getElementById("door3").src = "images/door.jpg";
+// 		pathSrc2 = '';
+// 		if (pathCheck2 === 1){
+// 			NoSwitchAndLose.style.display = "block";
+// 			pathSrc2 =  "images/goat.jpg";
+// 		} else if(pathCheck2 === 2){
+// 			NoSwitchAndWin.style.display = "block";
+// 			pathSrc2 =  "images/sportscar.jpg";
+// 		} else {
+// 			NoSwitchAndLose.style.display = "block";
+// 			pathSrc2 =  "images/goat.jpg";
+// 		}
+
+// 		document.getElementById("door2").src = pathSrc2;
+// 		switchChoiceYes.style.display = "none";
+// 		switchChoiceNo.style.display = "none";
+// 		row2.style.display = "none";
+
+// 	}
+
+
+// 	// row1.hidden = true;
+// 	// doorTwo.hidden = false;
+// 	// setTimeout(() => { doorTwo.hidden = true; }, 1000);
+// 	// setTimeout(() => { row2.hidden = false; }, 1000)
+
+// 	// if (openDoor1 === losePath) {
+// 	// 	setTimeout(() =>
+// 	// 	{ doorImage1.src = openDoor1; }, 2000);
+
+// 	// } else if (openDoor3 === losePath) {
+// 	// 	setTimeout(() =>
+// 	// 	{ doorImage3.src = openDoor3; }, 2000);
+// 	// }
+
+// 	// switchChoiceYes.onclick = () => {
+// 	// 	if (doorImage1.src === losePath) {
+// 	// 		row2.hidden = true;
+// 	// 		instructions.innerHTML = "You switched to door 3"
+// 	// 		setTimeout(() =>
+// 	// 		{ instructions.innerHTML =
+// 	// 			"Revealing your chosen door..."; }, 1000);
+// 	// 		setTimeout(() => { doorImage3.src = openDoor3; }, 2500);
+// 	// 		if (openDoor3 === losePath) {
+// 	// 			setTimeout(() => { switchAndLose(); }, 3500)
+// 	// 		} else {
+// 	// 			setTimeout(() => { switchAndWin(); }, 3500)
+// 	// 		}
+// 	// 	} else if (doorImage3.src === losePath) {
+// 	// 		row2.hidden = true;
+// 	// 		instructions.innerHTML = "You switched to door 1";
+// 	// 		setTimeout(() => { instructions.innerHTML
+// 	// 			= "Revealing your chosen door..."; }, 1000);
+// 	// 		setTimeout(() => { doorImage1.src = openDoor1; }, 2500);
+// 	// 		if (openDoor1 === losePath) {
+// 	// 			setTimeout(() => { switchAndLose(); }, 3500)
+// 	// 		} else {
+// 	// 			setTimeout(() => { switchAndWin(); }, 3500)
+// 	// 		}
+// 	// 	}
+// 	// }
+// 	// switchChoiceNo.onclick = () => {
+// 	// 	row2.hidden = true;
+// 	// 	instructions.innerHTML = "Your choice is still door2"
+// 	// 	setTimeout(() => { instructions.innerHTML =
+// 	// 		"Revealing your chosen door..."; }, 1000);
+// 	// 	setTimeout(() => { doorImage2.src = openDoor2; }, 2500);
+// 	// 	if (openDoor2 === losePath) {
+// 	// 		setTimeout(() => { noSwitchAndLose(); }, 3500)
+// 	// 	} else {
+// 	// 		setTimeout(() => { noSwitchAndWin(); }, 3500)
+// 	// 	}
+// 	// }
+// }
+
+// // Event listener for door 3
+
+// doorImage3.onclick = () => {
+
+// 	SwitchAndLose.style.display = "none";
+// 	SwitchAndWin.style.display = "none";
+// 	switchChoiceYes.style.display = "block";
+// 	switchChoiceNo.style.display = "block";
+// 	row2.style.display = "block";
+// 	let pathCheck3 = Math.floor(Math.random() * 3);
+// 	let pathSrc3 =  "";
+// 	document.getElementById("door1").src = "images/door.jpg";
+// 	document.getElementById("door3").src = "images/door.jpg";
+// 	document.getElementById("door2").src = "images/door.jpg";
+
+
+// 	// Revealing necessary elements for dialogue
+// 	row1.hidden = true;
+// 	doorThree.hidden = true;
+// 	setTimeout(()=>{
+// 		doorThree.hidden = true;
+// 	},1000);
+// 	setTimeout(()=>{
+// 		row2.hidden = false;
+// 	},1000);
+
+// 	pathSrc3 =  "images/goat.jpg";
+
+// 	document.getElementById("door1").src = pathSrc3;
+
+// 	//Event listener if the player opts to switch
+
+// 	switchChoiceYes.onclick = () => {
+
+// 		pathSrc3 = '';
+// 		if (pathCheck3 === 1) {
+// 			SwitchAndLose.style.display = "block";
+// 			pathSrc3 =  "images/goat.jpg";
+// 		} else if (pathCheck3 === 2){
+// 			SwitchAndWin.style.display = "block";
+// 			pathSrc3 =  "images/sportscar.jpg";
+// 		} else {
+// 			SwitchAndLose.style.display = "block";
+// 			pathSrc3 =  "images/goat.jpg";
+// 		}
+
+// 		document.getElementById("door1").src = "images/door.jpg";
+// 		document.getElementById("door2").src = "images/door.jpg";
+// 		switchChoiceYes.style.display = "none";
+// 		switchChoiceNo.style.display = "none";
+// 		row2.style.display = "none";
+// 	}
+
+// 	//Event listener if the player does not opt to switch
+// 	switchChoiceNo.onclick = () => {
+// 		SwitchAndLose.style.display = "none";
+// 		SwitchAndWin.style.display = "none";
+// 		document.getElementById("door1").src = "";
+// 		document.getElementById("door2").src = "images/door.jpg";
+// 		pathSrc3 = '';
+// 		if (pathCheck3 === 1){
+// 			NoSwitchAndLose.style.display = "block";
+// 			pathSrc3 =  "images/goat.jpg";
+// 		}else if(pathCheck3 === 2){
+// 			NoSwitchAndWin.style.display = "block";
+// 			pathSrc3 =  "images/sportscar.jpg";
+// 		}else{
+// 			NoSwitchAndLose.style.display = "block";
+// 			pathSrc3 =  "images/goat.jpg";
+// 		}
+
+// 		document.getElementById("door3").src = pathSrc3;
+// 		switchChoiceYes.style.display = "none";
+// 		switchChoiceNo.style.display = "none";
+// 		row2.style.display = "none";
+// 	}
 
 
 
@@ -400,4 +442,8 @@ doorImage3.onclick = () => {
 	// 		setTimeout(() => { noSwitchAndWin(); }, 3500)
 	// 	}
 	// }
-}
+// }
+
+// submitSwitchAndWinReset.addEventListener("click", function (){
+	
+//   });
