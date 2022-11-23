@@ -16,6 +16,16 @@ const SwitchAndLose = document.getElementById('SwitchAndLose');
 const NoSwitchAndWin = document.getElementById('NoSwitchAndWin');
 const NoSwitchAndLose = document.getElementById('NoSwitchAndLose');
 
+let submitSwitchAndWinReset = document.getElementById('submit-switchandwin');
+let submitSwitchAndLoseReset = document.getElementById('submit-switchandlose');
+let submitNoSwitchAndWinReset = document.getElementById('submit-noswitchandwin');
+let submitNoSwitchAndLoseReset = document.getElementById('submit-noswitchandlose');
+
+let displaySubmit = [];
+
+
+
+
 
 // Variables for shuffling the doors
 let openDoor1;
@@ -31,6 +41,25 @@ row2.hidden = true;
 doorOne.hidden = true;
 doorTwo.hidden = true;
 doorThree.hidden = true;
+
+
+
+const switchAndWin = () => { // display the result of the player based on their choices
+	body.hidden = false;
+	SwitchAndWin.hidden = false;
+}
+const switchAndLose = () => {
+	body.hidden = true;
+	SwitchAndLose.hidden = false;
+}
+const noSwitchAndWin = () => {
+	body.hidden = true;
+	NoSwitchAndWin.hidden = false;
+}
+const noSwitchAndLose = () => {
+	body.hidden = true;
+	NoSwitchAndLose.hidden = false;
+}
 
 // Event listener for door 1
 
@@ -58,6 +87,9 @@ doorImage1.onclick = () => {
 	pathSrc1 =  "images/goat.jpg";
 
 	document.getElementById("door3").src = pathSrc1;
+
+	//Event listener if the player opts to switch
+
 
 	switchChoiceYes.onclick = () => {
 
@@ -103,26 +135,8 @@ doorImage1.onclick = () => {
 		switchChoiceNo.style.display = "none";
 		row2.style.display = "none";
 
+
 	}
-}
-
-
-
-const switchAndWin = () => { // display the result of the player based on their choices
-	body.hidden = false;
-	SwitchAndWin.hidden = false;
-}
-const switchAndLose = () => {
-	body.hidden = true;
-	SwitchAndLose.hidden = false;
-}
-const noSwitchAndWin = () => {
-	body.hidden = true;
-	NoSwitchAndWin.hidden = false;
-}
-const noSwitchAndLose = () => {
-	body.hidden = true;
-	NoSwitchAndLose.hidden = false;
 }
 
 
@@ -153,7 +167,9 @@ doorImage2.onclick = () => {
 
 	pathSrc2 =  "images/goat.jpg";
 
-	document.getElementById("door3").src = pathSrc;
+	document.getElementById("door3").src = pathSrc2;
+
+	//Event listener if the player opts to switch
 
 	switchChoiceYes.onclick = () => {
 
