@@ -10,7 +10,7 @@
 <body>
 	<div id="body">
 		<header>
-			<h1>Welcome to Monty Hall game</h1>
+			<h1>Welcome to the Monty Hall Problem</h1>
 		</header>
 		<div id="instructions" class="instructions">
 			<div id="row1" class="row1">Please Select a door</div>
@@ -41,24 +41,25 @@
 			<p>Congratulations - you made the right choice by switching to another door!</p>
 			<p>By switching, you increased your probability of winning to 0.67 / two-thirds / 66.6666666%.</p>
 			<p>A sportscar is yours.</p>
+			<input type="submit" id="submit-switchandwin" value="Play again to redefine your luck">
 		</div>
 	
 		<div id="SwitchAndLose" class="result" style="display: none">
 			<p>Commiserations - the chances of you winning was 0.67 / two-thirds / 66.6666666% since you switched to another door, 
 				but unfortunately still lost. Bad luck.</p>
-			<p>Play again to redefine your luck</p>
+			<input type="submit" id="submit-switchandlose" value="Play again to redefine your luck">
 		</div>
 	
 		<div id="NoSwitchAndWin" class="result" style="display: none">
 			<p>Congratulations - you are a very lucky person!</p>
 			<p>The probability of you winning was only 0.33 because you didn't switch to another door ,yet you still won.
 			If you had switched doors, you would've increased your probability of winning to 0.67 / two-thirds / 66.6666666%.</p>
-			<p> A sportscar is yours.</p>
+			<input type="submit" id="submit-noswitchandwin" value="Play again to redefine your luck">
 		</div>
 
 		<div id="NoSwitchAndLose" class="result" style="display: none">
 			<p>You Lost - since you didn't switch, your chances of winning were only 33%</p>
-			<p>Play again to redefine your luck</p>
+			<input type="Submit" id="submit-noswitchandlose" value="Play again to redefine your luck">
 		</div>
 
 	</div>
