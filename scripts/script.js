@@ -27,7 +27,7 @@ const losePath =
 // Variables for shuffling the doors
 var openDoor1, openDoor2, openDoor3, winner;
 
-// Hiding unnecessary elements
+// Hiding text elements
 row2.hidden = true;
 SwitchAndWin.hidden = true;
 SwitchAndLose.hidden = true;
@@ -56,6 +56,8 @@ function pathCheck() {
 }
 // Calling the function
 pathCheck();
+
+
 // Event listener for door 1
 doorImage1.onclick = () => {
 
@@ -69,7 +71,7 @@ doorImage1.onclick = () => {
 		row2.hidden = false;
 	}, 1000);
 
-	// Opening a door which has a goat behind it.
+	// Opening a door which has a goat behind it
 	if (openDoor2 === losePath) {
 		setTimeout(() => { doorImage2.src = openDoor2; }, 2000);
 
@@ -80,8 +82,7 @@ doorImage1.onclick = () => {
 	//Event listener if the player opts to switch
 	switchChoiceYes.onclick = () => {
 
-		// If the opened door is door2, forming a
-		// suitable dialogue.
+		// If the opened door is door2
 		if (doorImage2.src ===
 			"images/goat.jpg") {
 			row2.hidden = true;
@@ -101,7 +102,7 @@ doorImage1.onclick = () => {
 				setTimeout(() => { switchAndWin(); }, 3500)
 			}
 		}
-		//If the opened door is door3, forming a suitable dialogue.
+		//If the opened door is door3
 		else if (doorImage3.src ===
 			"images/goat.jpg") {
 			row2.hidden = true;
@@ -121,7 +122,9 @@ doorImage1.onclick = () => {
 			}
 		}
 	}
-	//Event listener if the player does not opts to switch
+
+	//Event listener if the player does not opt to switch
+
 	switchChoiceNo.onclick = () => {
 		row2.hidden = true;
 		instructions.innerHTML = "Your choice is still door1";
@@ -131,9 +134,11 @@ doorImage1.onclick = () => {
 		}, 1000);
 
 		// Opening the chosen door
+
 		setTimeout(() => { doorImage1.src = openDoor1; }, 2500);
 
 		// Conditions to display the result page
+
 		if (openDoor1 === losePath) {
 			setTimeout(() => { noSwitchAndLose(); }, 3500)
 		} else {
@@ -145,17 +150,7 @@ doorImage1.onclick = () => {
 
 
 
-
-
 const localStorage = (result) => {
-	// window.localStorage.setItem("results", JSON.stringify(results));
-	// let result = []
-
-	// let old_data = JSON.parse(window.localStorage.getItem('results'))
-
-	// let new_data = old_data.push(result)
-
-	// window.localStorage.setItem('results', JSON.stringify(new_data))
 
 	var results = [];
 // window.localStorage.setItem('results', JSON.stringify(results));
@@ -164,9 +159,6 @@ results.push(result);
 window.localStorage.setItem('results', JSON.stringify(results));
 // JSON.parse(localStorage.getItem('yesArray')); // Returns ["yes"]
 }
-
-
-
 
 
 const doorResult = (param) => {
@@ -181,12 +173,8 @@ const doorResult = (param) => {
 	} else {
 		localStorage("lose")
 	}
-
-
 	
 }
-
-
 
 
 const switchAndWin = () => {
@@ -201,6 +189,9 @@ const noSwitchAndWin = () => {
 const noSwitchAndLose = () => {
 	doorResult(NoSwitchAndLose)
 }
+
+// Door 2 click
+
 doorImage2.onclick = () => {
 	row1.hidden = true;
 	d2.hidden = false;
@@ -260,6 +251,9 @@ doorImage2.onclick = () => {
 		}
 	}
 }
+
+// Door 3 click
+
 doorImage3.onclick = () => {
 	row1.hidden = true;
 	d3.hidden = false;
@@ -329,9 +323,9 @@ function displayResult() {
 	let loss = 0
 	
 	res.forEach(item=>{
-		if(item === "win"){
+		if (item === "win") {
 			win++
-		}else{
+		} else{
 			loss++
 		}
 	})
