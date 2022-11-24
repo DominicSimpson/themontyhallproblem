@@ -208,7 +208,7 @@ doorImage2.onclick = () => {
 	}
 
 	switchChoiceYes.onclick = () => {
-		if (doorImage1.src ===
+		if (doorImage1.src.split('/')[8] ===
 			"images/goat.jpg") {
 			row2.hidden = true;
 			instructions.innerHTML = "You switched to door3"
@@ -222,7 +222,7 @@ doorImage2.onclick = () => {
 			} else {
 				setTimeout(() => { switchAndWin(); }, 3500)
 			}
-		} else if (doorImage3.src ===
+		} else if (doorImage3.src.split('/')[8] ===
 			"images/goat.jpg") {
 			row2.hidden = true;
 			instructions.innerHTML = "You switched to door1";
@@ -270,7 +270,7 @@ doorImage3.onclick = () => {
 	}
 
 	switchChoiceYes.onclick = () => {
-		if (doorImage1.src ===
+		if (doorImage1.src.split('/')[8] ===
 			"images/goat.jpg") {
 			row2.hidden = true;
 			instructions.innerHTML = "You switched to door2"
@@ -284,7 +284,7 @@ doorImage3.onclick = () => {
 			} else {
 				setTimeout(() => { switchAndWin(); }, 3500)
 			}
-		} else if (doorImage2.src ===
+		} else if (doorImage2.src.split('/')[8] ===
 			"images/goat.jpg") {
 			row2.hidden = true;
 			instructions.innerHTML = "You switched to door1"
