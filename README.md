@@ -48,9 +48,7 @@ The second step was to consider the variables and functions that will be require
 | switchAndWinChoice              | If the contestant switches to another door which holds the car ('wins')   | DOM variable          |
 | switchAndLoseChoice             | If the contestant switches to another door which contains a goat ('loses')| DOM variable          |
 | noSwitchAndWinChoice            | If the contestant doesn't switch doors, but still wins                    | DOM variable          |
-| noSwitchAndLoseChoice
-| If the contestant doesn't switch doors, and loses                         | DOM variable          |
-| instructions                    | Text instruction for user                                                 | DOM variable          |
+| noSwitchAndLoseChoice		  | If the contestant doesn't switch doors, and loses                         | DOM variable          |
 | row1                            | Text urging user to select a door                                         | DOM variable          |
 | row2                            | Text querying if user wants to switch (includes yes/no buttons)           | DOM variable          |
 | winPath                         | If the user chooses door with car                                         | Variable              |
