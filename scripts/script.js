@@ -3,212 +3,346 @@ const body = document.getElementById('body');
 const instructions = document.getElementById('instructions');
 const row1 = document.getElementById('row1');
 const row2 = document.getElementById('row2');
-const doorOne = document.getElementById('d1');
-const doorTwo = document.getElementById('d2');
-const doorThree = document.getElementById('d3');
+const d1 = document.getElementById('d1');
+const d2 = document.getElementById('d2');
+const d3 = document.getElementById('d3');
 const switchChoiceYes = document.getElementById('btn-1');
 const switchChoiceNo = document.getElementById('btn-2');
 const doorImage1 = document.getElementById('door1');
 const doorImage2 = document.getElementById('door2');
 const doorImage3 = document.getElementById('door3');
-const switchAndWinChoice = document.getElementById('switchandwinchoice');
-const switchAndLoseChoice = document.getElementById('switchandlosechoice');
-const noSwitchAndWinChoice = document.getElementById('noswitchandwinchoice');
-const noSwitchAndLoseChoice = document.getElementById('noswitchandlosechoice');
+const SwitchAndWin = document.getElementById("switchAndWin");
+const SwitchAndLose = document.getElementById("switchAndLose");
+const NoSwitchAndWin = document.getElementById("NoSwitchAndWin");
+const NoSwitchAndLose = document.getElementById("NoSwitchAndLose");
+const display = document.querySelector(".displayResult")
 
-let submitSwitchAndWinReset = document.getElementById('submit-switchandwin');
-let submitSwitchAndLoseReset = document.getElementById('submit-switchandlose');
-let submitNoSwitchAndWinReset = document.getElementById('submit-noswitchandwin');
-let submitNoSwitchAndLoseReset = document.getElementById('submit-noswitchandlose');
+// Image of Car
+const winPath =
+	"images/sportscar.jpg";
+// Image of Goat
+const losePath =
+	"images/goat.jpg";
 
+// Variables for shuffling the doors
+var openDoor1, openDoor2, openDoor3, winner;
 
-// Hiding text at start
-
+// Hiding unnecessary elements
 row2.hidden = true;
-doorOne.hidden = true;
-doorTwo.hidden = true;
-doorThree.hidden = true;
+SwitchAndWin.hidden = true;
+SwitchAndLose.hidden = true;
+NoSwitchAndWin.hidden = true;
+NoSwitchAndLose.hidden = true;
+d1.hidden = true;
+d2.hidden = true;
+d3.hidden = true;
 
-const switchAndWin = () => { // display the result of the player based on their choices
-	body.hidden = false;
-	switchAndWinChoice.hidden = false;
+// Function to randomly shuffle the doors
+function pathCheck() {
+	winner = Math.floor(Math.random() * 3);
+	if (winner === 1) {
+		openDoor1 = winPath;
+		openDoor2 = losePath;
+		openDoor3 = losePath;
+	} else if (winner === 2) {
+		openDoor2 = winPath;
+		openDoor1 = losePath;
+		openDoor3 = losePath;
+	} else {
+		openDoor3 = winPath;
+		openDoor2 = losePath;
+		openDoor1 = losePath;
+	}
 }
-const switchAndLose = () => {
-	body.hidden = true;
-	switchAndLoseChoice.hidden = false;
-}
-const noSwitchAndWin = () => {
-	body.hidden = true;
-	noSwitchAndWinChoice.hidden = false;
-}
-const noSwitchAndLose = () => {
-	body.hidden = true;
-	noSwitchAndLoseChoice.hidden = false;
-}
+// Calling the function
+pathCheck();
+// Event listener for door 1
+doorImage1.onclick = () => {
 
-
-// Function for each door result
-
-function doorResult(doorNumber) {
-
-	switchAndLoseChoice.style.display = "none";
-	switchAndWinChoice.style.display = "none";
-	switchChoiceYes.style.display = "block";
-	switchChoiceNo.style.display = "block";
-	row2.style.display = "block";
-	let pathCheck = Math.floor(Math.random() * 3);
-	let pathSrc =  "";
-	document.getElementById("door1").src = "images/door.jpg";
-	document.getElementById("door2").src = "images/door.jpg";
-	document.getElementById("door3").src = "images/door.jpg";
-
-
+	// Revealing necessary elements for dialogue
 	row1.hidden = true;
-	doorOne.hidden = true;
-	doorTwo.hidden = true;
-	// doorThree.hidden = true;
-	setTimeout(()=>{
-		doorNumber.hidden = true;
-	},1000);
-	setTimeout(()=>{
+	d1.hidden = false;
+	setTimeout(() => {
+		d1.hidden = true;
+	}, 1000);
+	setTimeout(() => {
 		row2.hidden = false;
-	},1000);
+	}, 1000);
 
-	pathSrc =  "images/goat.jpg";
+	// Opening a door which has a goat behind it.
+	if (openDoor2 === losePath) {
+		setTimeout(() => { doorImage2.src = openDoor2; }, 2000);
 
-	document.getElementById("door3").src = pathSrc;
+	} else if (openDoor3 === losePath) {
+		setTimeout(() => { doorImage3.src = openDoor3; }, 2000);
+	}
 
 	//Event listener if the player opts to switch
+	switchChoiceYes.onclick = () => {
 
+		// If the opened door is door2, forming a
+		// suitable dialogue.
+		if (doorImage2.src ===
+			"images/goat.jpg") {
+			row2.hidden = true;
+			instructions.innerHTML = "You switched to door3";
+			setTimeout(() => {
+				instructions.innerHTML =
+					"Revealing your chosen door......";
+			}, 1000);
 
-	switchChoiceYes.onclick = () => { // random door picker
+			// Opening the chosen door
+			setTimeout(() => { doorImage3.src = openDoor3; }, 2500);
 
-		pathSrc = '';
-		if (pathCheck === 1){
-			switchAndLoseChoice.style.display = "block";
-			pathSrc =  "images/goat.jpg";
-			winsLossesCounter.Losses ++;
-		} else if (pathCheck === 2){
-			switchAndWinChoice.style.display = "block";
-			pathSrc =  "images/sportscar.jpg";
-			winsLossesCounter.Wins ++;
-		} else {
-			switchAndLoseChoice.style.display = "block";
-			pathSrc =  "images/goat.jpg";
-			winsLossesCounter.Losses ++;
+			//Conditions to display the result page
+			if (openDoor3 === losePath) {
+				setTimeout(() => { switchAndLose(); }, 3500)
+			} else {
+				setTimeout(() => { switchAndWin(); }, 3500)
+			}
 		}
+		//If the opened door is door3, forming a suitable dialogue.
+		else if (doorImage3.src ===
+			"images/goat.jpg") {
+			row2.hidden = true;
+			instructions.innerHTML = "You switched to door2";
+			setTimeout(() => {
+				instructions.innerHTML =
+					"Revealing your chosen door......";
+			}, 1000);
 
-		document.getElementById("door2").src = pathSrc;
-		document.getElementById("door3").src = "images/door.jpg";
+			// Opening the chosen door
+			setTimeout(() => { doorImage2.src = openDoor2; }, 2500);
+			//Conditions to display the result page
+			if (openDoor2 === losePath) {
+				setTimeout(() => { switchAndLose(); }, 3500)
+			} else {
+				setTimeout(() => { switchAndWin(); }, 3500)
+			}
+		}
+	}
+	//Event listener if the player does not opts to switch
+	switchChoiceNo.onclick = () => {
+		row2.hidden = true;
+		instructions.innerHTML = "Your choice is still door1";
+		setTimeout(() => {
+			instructions.innerHTML =
+			"Revealing your chosen door......";
+		}, 1000);
 
-		switchChoiceYes.style.display = "none";
-		switchChoiceNo.style.display = "none";
-		row2.style.display = "none";
+		// Opening the chosen door
+		setTimeout(() => { doorImage1.src = openDoor1; }, 2500);
+
+		// Conditions to display the result page
+		if (openDoor1 === losePath) {
+			setTimeout(() => { noSwitchAndLose(); }, 3500)
+		} else {
+			setTimeout(() => { noSwitchAndWin(); }, 3500)
+		}
+	}
+}
+
+
+
+
+
+
+const localStorage = (result) => {
+	// window.localStorage.setItem("results", JSON.stringify(results));
+	// let result = []
+
+	// let old_data = JSON.parse(window.localStorage.getItem('results'))
+
+	// let new_data = old_data.push(result)
+
+	// window.localStorage.setItem('results', JSON.stringify(new_data))
+
+	var results = [];
+// window.localStorage.setItem('results', JSON.stringify(results));
+results = JSON.parse(window.localStorage.getItem('results')) || [];
+results.push(result);
+window.localStorage.setItem('results', JSON.stringify(results));
+// JSON.parse(localStorage.getItem('yesArray')); // Returns ["yes"]
+}
+
+
+
+
+
+const doorResult = (param) => {
+	body.hidden = true;
+	param.hidden = false
+	if (param === SwitchAndWin) {
+		localStorage("win")
+	} else if (param === SwitchAndLose) {
+		localStorage("lose")
+	} else if (param === NoSwitchAndWin) {
+		localStorage("win")
+	} else {
+		localStorage("lose")
 	}
 
-	// Event listener if the player does not opt to switch
 
-		switchChoiceNo.onclick = () => {
-		switchAndLoseChoice.style.display = "none";
-		switchAndWinChoice.style.display = "none";
-		document.getElementById("door2").src = "images/door.jpg";
-		document.getElementById("door3").src = "images/door.jpg";
-		pathSrc = '';
-		if (pathCheck === 1) {
-			noSwitchAndLoseChoice.style.display = "block";
-			pathSrc =  "images/goat.jpg";
-			winsLossesCounter.Losses ++;
-		} else if (pathCheck === 2){
-			noSwitchAndWinChoice.style.display = "block";
-			pathSrc =  "images/sportscar.jpg";
-			winsLossesCounter.Wins ++;
-		} else {
-			noSwitchAndLoseChoice.style.display = "block";
-			pathSrc =  "images/goat.jpg";
-			winsLossesCounter.Losses ++;
-		}
+	
+}
 
-		document.getElementById(doorResult).src = pathSrc;
-		switchChoiceYes.style.display = "none";
-		switchChoiceNo.style.display = "none";
-		row2.style.display = "none";
 
+
+
+const switchAndWin = () => {
+	doorResult(SwitchAndWin)
+}
+const switchAndLose = () => {
+	doorResult(SwitchAndLose)
+}
+const noSwitchAndWin = () => {
+	doorResult(NoSwitchAndWin)
+}
+const noSwitchAndLose = () => {
+	doorResult(NoSwitchAndLose)
+}
+doorImage2.onclick = () => {
+	row1.hidden = true;
+	d2.hidden = false;
+	setTimeout(() => { d2.hidden = true; }, 1000);
+	setTimeout(() => { row2.hidden = false; }, 1000)
+
+	if (openDoor1 === losePath) {
+		setTimeout(() => { doorImage1.src = openDoor1; }, 2000);
+
+	} else if (openDoor3 === losePath) {
+		setTimeout(() => { doorImage3.src = openDoor3; }, 2000);
 	}
 
+	switchChoiceYes.onclick = () => {
+		if (doorImage1.src ===
+			"images/goat.jpg") {
+			row2.hidden = true;
+			instructions.innerHTML = "You switched to door3"
+			setTimeout(() => {
+				instructions.innerHTML =
+				"Revealing your chosen door......";
+			}, 1000);
+			setTimeout(() => { doorImage3.src = openDoor3; }, 2500);
+			if (openDoor3 === losePath) {
+				setTimeout(() => { switchAndLose(); }, 3500)
+			} else {
+				setTimeout(() => { switchAndWin(); }, 3500)
+			}
+		} else if (doorImage3.src ===
+			"images/goat.jpg") {
+			row2.hidden = true;
+			instructions.innerHTML = "You switched to door1";
+			setTimeout(() => {
+				instructions.innerHTML
+				= "Revealing your chosen door......";
+			}, 1000);
+			setTimeout(() => { doorImage1.src = openDoor1; }, 2500);
+			if (openDoor1 === losePath) {
+				setTimeout(() => { switchAndLose(); }, 3500)
+			} else {
+				setTimeout(() => { switchAndWin(); }, 3500)
+			}
+		}
+	}
+	switchChoiceNo.onclick = () => {
+		row2.hidden = true;
+		instructions.innerHTML = "Your choice is still door2"
+		setTimeout(() => {
+			instructions.innerHTML =
+			"Revealing your chosen door......";
+		}, 1000);
+		setTimeout(() => { doorImage2.src = openDoor2; }, 2500);
+		if (openDoor2 === losePath) {
+			setTimeout(() => { noSwitchAndLose(); }, 3500)
+		} else {
+			setTimeout(() => { noSwitchAndWin(); }, 3500)
+		}
+	}
 }
+doorImage3.onclick = () => {
+	row1.hidden = true;
+	d3.hidden = false;
+	setTimeout(() => { d3.hidden = true; }, 1000);
+	setTimeout(() => { row2.hidden = false; }, 1000)
 
+	if (openDoor1 === losePath) {
+		setTimeout(() => { doorImage1.src = openDoor1; }, 2000);
 
-// Event listeners for each door
+	} else if (openDoor2 === losePath) {
+		setTimeout(() => { doorImage2.src = openDoor2; }, 2000);
+	}
 
-doorImage1.onclick = () =>  {
-	doorResult("door1");
+	switchChoiceYes.onclick = () => {
+		if (doorImage1.src ===
+			"images/goat.jpg") {
+			row2.hidden = true;
+			instructions.innerHTML = "You switched to door2"
+			setTimeout(() => {
+				instructions.innerHTML =
+				"Revealing your chosen door......";
+			}, 1000);
+			setTimeout(() => { doorImage2.src = openDoor2; }, 2500);
+			if (openDoor2 === losePath) {
+				setTimeout(() => { switchAndLose(); }, 3500)
+			} else {
+				setTimeout(() => { switchAndWin(); }, 3500)
+			}
+		} else if (doorImage2.src ===
+			"images/goat.jpg") {
+			row2.hidden = true;
+			instructions.innerHTML = "You switched to door1"
+			setTimeout(() => {
+				instructions.innerHTML =
+				"Revealing your chosen door......";
+			}, 1000);
+			setTimeout(() => { doorImage1.src = openDoor1; }, 2500);
+			if (openDoor1 === losePath) {
+				setTimeout(() => { switchAndLose(); }, 3500)
+			} else {
+				setTimeout(() => { switchAndWin(); }, 3500)
+			}
+		}
+	}
+	switchChoiceNo.onclick = () => {
+		row2.hidden = true;
+		instructions.innerHTML = "Your choice is still door3"
+		setTimeout(() => {
+			instructions.innerHTML =
+			"Revealing your chosen door......";
+		}, 1000);
+		setTimeout(() => { doorImage3.src = openDoor3; }, 2500);
+		if (openDoor3 === losePath) {
+			setTimeout(() => { noSwitchAndLose(); }, 3500)
+		} else {
+			setTimeout(() => { noSwitchAndWin(); }, 3500)
+		}
+	}
 }
-
-doorImage2.onclick = () =>  {
-	doorResult("door2");
-}
-
-doorImage3.onclick = () =>  {
-	doorResult("door3");
-}
-
-// Stats and Local Storage
-
-let userWonTally = localStorage.getItem('Won');
-let userLostTally = localStorage.getItem('Lost');
-
-let winsLossesCounter = { // object recording wins and losses
-	Wins: userWonTally,
-	Losses: userLostTally,
-}
-
-
-
-function localStorage() {
-if (!localStorage.getItem('Won')) {
-	populateLocalStorage(winsLossesCounterDisplay);
-  } else {
-	updateCounterDisplay(winsLossesCounterDisplay);
-  }
-}
-
-let winsLossesCounterDisplay = document.querySelector("#win-lose-counter-display");
-
-
-
-let userSwitchWinTotal = switchAndWinChoice.Wins;
-let userStayWinTotal = noSwitchAndWinChoice.Wins;
-let userSwitchLoseTotal = switchAndLoseChoice.Losses;
-let userStayLoseTotal = noSwitchAndLoseChoice.Losses;
-
-
-localStorage.setItem('Won', JSON.stringify(`${userSwitchWinTotal}`));
-localStorage.setItem('Lost', JSON.stringify(`${userSwitchLoseTotal}`));
-localStorage.setItem('Won', JSON.stringify(`${userSwitchWinTotal}`));
-localStorage.setItem('Lost', JSON.stringify(`${userStayLoseTotal}`));
 
 
 
 function displayResult() {
-if (userSwitchWinTotal === null) {
-	winsLossesCounterDisplay.textContent = `Won:0 Lost:${userSwitchLoseTotal}`;
-} else if (userSwitchLoseTotal === null) {
-	winsLossesCounterDisplay.textContent = `Won:${userSwitchWinTotal} Lost:0`;
-} else {
-	winsLossesCounterDisplay.textContent = `Won:${userStayWinTotal} Lost:${userStayLoseTotal}`
+	let res = JSON.parse(window.localStorage.getItem("results"));
+
+	let win = 0
+	let loss = 0
+	
+	res.forEach(item=>{
+		if(item === "win"){
+			win++
+		}else{
+			loss++
+		}
+	})
+	
+	display.innerHTML =`Won: ${win} Lost: ${loss}`
+	// if (userSwitchWinTotal === null) {
+	// 	winsLossesCounterDisplay.textContent = `Won:0 Lost:${userSwitchLoseTotal}`;
+	// } else if (userSwitchLoseTotal === null) {
+	// 	winsLossesCounterDisplay.textContent = `Won:${userSwitchWinTotal} Lost:0`;
+	// } else {
+	// 	winsLossesCounterDisplay.textContent = `Won:${userStayWinTotal} Lost:${userStayLoseTotal}`
+	// }
 }
-
-submitSwitchAndWinReset.addEventListener("click", doorResult());
-submitSwitchAndLoseReset.addEventListener("click", doorResult());
-submitNoSwitchAndWinReset.addEventListener("click", doorResult());
-submitNoSwitchAndLoseReset.addEventListener("click", doorResult());
-
-
-}; 
-
-localStorage();
-
-displayResult();
-
-
-
+displayResult()
