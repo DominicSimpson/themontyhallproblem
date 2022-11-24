@@ -81,35 +81,21 @@ The second step was to consider the variables and functions that will be require
 ###### Pseudocode:                    
                         
 ```
-* hidden is a property in JavaScript that returns a boolean *
-* each of these callback functions display the result to the player depending on their choices after asynchronous setTimeouts
-
-const switchAndWin = () => {
-  body.hidden is equal to true;
-  switchAndWinChoice hidden is revealed (equal to false): "Congratulations - you made the right choice by switching to another door! 
-  			By switching, you increased your probability of winning to 0.67 / two-thirds / 66.6666666%.";
-}
-
-const switchAndLose = () => {
-  body.hidden is equal to true;
-  switchAndLoseChoice hidden is revealed (equal to false): "Commiserations - the chances of you winning was 
-  			0.67 / two-thirds / 66.6666666% since you switched to another door, but unfortunately you still lost. 
-			Bad luck. Play again to redefine your luck.";
-}
-
-const noSwitchAndWin = () => {
-  body.hidden is equal to true;
-  noSwitchAndWinChoice hidden is revealed (equal to false): "Congratulations - you are a very lucky person!
-			The probability of you winning was only 0.33 because you didn't switch to another door, yet you still won.
-			If you had switched doors, you would've increased your probability 
-			of winning to 0.67 / two-thirds / 66.6666666%.";
-		
-}
-
-const noSwitchAndLose = () => {
-  body.hidden is equal to true;
-  noSwitchAndLoseChoice hidden is revealed (equal to false): "You Lost - since you didn't switch, your chances of winning were only 33%.
-  			Play again to redefine your luck.";
+function pathCheck() {
+	winner = Math.floor(Math.random() * 3);
+	if (winner is equal to 1) {
+		openDoor1 is winPath;
+		openDoor2 is losePath;
+		openDoor3 is losePath;
+	} else if (winner is equal to 2) {
+		openDoor2 is winPath;
+		openDoor1 is losePath;
+		openDoor3 is losePath;
+	} else {
+		openDoor3 is winPath;
+		openDoor2 is losePath;
+		openDoor1 is losePath;
+	}
 }
 ```
 
