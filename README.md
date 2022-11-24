@@ -61,6 +61,11 @@ The second step was to consider the variables and functions that will be require
 | switchAndLose                   | Displays the result of the player switching and losing                    | Variable              |
 | noSwitchAndWin                  | Displays the result of the player not switching but still winning         | Variable              |
 | noSwitchAndLose                 | Displays the result of the player not switching and losing                | Variable              |
+| submitSwitchAndWinReset	  | Resets game								      | DOM variable          |
+| submitSwitchAndLoseReset	  | Resets game								      | DOM variable 	      |
+| submitNoSwitchAndWinReset	  | Resets game								      | DOM variable	      |
+| submitNoSwitchAndLoseReset	  | Resets game								      | DOM variable	      |
+
 
 
 | Functions                       | Description                                                               | Type                  |
