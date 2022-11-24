@@ -32,31 +32,33 @@
 		</div>
 
 		<div id="resetbutton">
-		<div id="SwitchAndWin" class="result" style="display: none">
-			<p>Congratulations - you made the right choice by switching to another door!</p>
-			<p>By switching, you increased your probability of winning to 0.67 / two-thirds / 66.6666666%.</p>
-			<p>A sportscar is yours.</p>
-			<input type="submit" id="submit-switchandwin" class="resetbutton" value="Play again to redefine your luck">
-		</div>
+			<div id="SwitchAndWin" class="result" style="display: none">
+				<p>Congratulations - you made the right choice by switching to another door!</p>
+				<p>By switching, you increased your probability of winning to 0.67 / two-thirds / 66.6666666%.</p>
+				<p>A sportscar is yours.</p>
+				<button id="submit-switchandwin">Play again to redefine your luck</button>
+			</div>
 	
-		<div id="SwitchAndLose" class="result" style="display: none">
-			<p>Commiserations - the chances of you winning were 0.67 / two-thirds / 66.6666666% since you switched to another door, 
-				but unfortunately you still lost. Bad luck.</p>
-			<input type="submit" id="submit-switchandlose" class="resetbutton" value="Play again to redefine your luck">
-		</div>
+			<div id="SwitchAndLose" class="result" style="display: none">
+				<p>Commiserations - the chances of you winning were 0.67 / two-thirds / 66.6666666% since you switched to another door, 
+				but unfortunately, you still lost. Bad luck.</p>
+				<button id="submit-switchandlose">Play again to redefine your luck</button>
+			</div>
 	
-		<div id="NoSwitchAndWin" class="result" style="display: none">
-			<p>Congratulations - you are a very lucky person!</p>
-			<p>The probability of you winning was only 0.33 because you didn't switch to another door, yet you still won.
-			If you had switched doors, you would've increased your probability of winning to 0.67 / two-thirds / 66.6666666%.</p>
-			<input type="submit" id="submit-noswitchandwin" class="resetbutton" value="Play again to redefine your luck">
+			<div id="NoSwitchAndWin" class="result" style="display: none">
+				<p>Congratulations - you are a very lucky person!</p>
+				<p>The probability of you winning was only 0.33 because you didn't switch to another door, yet you still won.
+				If you had switched doors, you would've increased your probability of winning to 0.67 / two-thirds / 66.6666666%.</p>
+				<button id="submit-noswitchandwin">Play again to redefine your luck</button>
+			</div>
+
+			<div id="NoSwitchAndLose" class="result" style="display: none">
+				<p>You lost - since you didn't switch, your chances of winning were only 33%.</p>
+				<button id="submit-noswitchandlose">Play again to redefine your luck</button>
+			</div>
 		</div>
 
-		<div id="NoSwitchAndLose" class="result" style="display: none">
-			<p>You Lost - since you didn't switch, your chances of winning were only 33%</p>
-			<input type="submit" id="submit-noswitchandlose" class="resetbutton" value="Play again to redefine your luck">
-		</div>
-		</div>
+		<p id="win-lose-counter-display"></p>
 
 		<main class="door-row">
 			<img id="door1" class="door"
@@ -72,5 +74,6 @@
 	</div>
 
 	<script src="scripts/script.js"></script>
+	<script src="scripts/localstorage.js"></script>
 </body>
 </html>
