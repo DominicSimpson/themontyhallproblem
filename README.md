@@ -65,6 +65,7 @@ The second step was to consider the variables and functions that will be require
 | submitSwitchAndLoseReset	  | Resets game								      | DOM variable 	      |
 | submitNoSwitchAndWinReset	  | Resets game								      | DOM variable	      |
 | submitNoSwitchAndLoseReset	  | Resets game								      | DOM variable	      |
+| pathCheck			  | Takes math random / math floor result				      | Variable	      |
 
 
 
