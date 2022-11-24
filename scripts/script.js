@@ -82,9 +82,11 @@ doorImage1.onclick = () => {
 	//Event listener if the player opts to switch
 	switchChoiceYes.onclick = () => {
 
+		console.log('doorImage2', doorImage2.src);
+		console.log('doorImage2', doorImage3.src);
 		// If the opened door is door2
-		if (doorImage2.src ===
-			"images/goat.jpg") {
+		if (doorImage2.src.split('/')[8] ===
+			"goat.jpg") {
 			row2.hidden = true;
 			instructions.innerHTML = "You switched to door3";
 			setTimeout(() => {
@@ -103,8 +105,8 @@ doorImage1.onclick = () => {
 			}
 		}
 		//If the opened door is door3
-		else if (doorImage3.src ===
-			"images/goat.jpg") {
+		else if (doorImage3.src.split('/')[8] ===
+			"goat.jpg") {
 			row2.hidden = true;
 			instructions.innerHTML = "You switched to door2";
 			setTimeout(() => {
