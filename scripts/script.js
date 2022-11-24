@@ -11,10 +11,10 @@ const switchChoiceNo = document.getElementById('btn-2');
 const doorImage1 = document.getElementById('door1');
 const doorImage2 = document.getElementById('door2');
 const doorImage3 = document.getElementById('door3');
-const SwitchAndWin = document.getElementById('SwitchAndWin');
-const SwitchAndLose = document.getElementById('SwitchAndLose');
-const NoSwitchAndWin = document.getElementById('NoSwitchAndWin');
-const NoSwitchAndLose = document.getElementById('NoSwitchAndLose');
+const switchAndWinChoice = document.getElementById('switchandwinchoice');
+const switchAndLoseChoice = document.getElementById('switchandlosechoice');
+const noSwitchAndWinChoice = document.getElementById('noswitchandwinchoice');
+const noSwitchAndLoseChoice = document.getElementById('noswitchandlosechoice');
 
 let submitSwitchAndWinReset = document.getElementById('submit-switchandwin');
 let submitSwitchAndLoseReset = document.getElementById('submit-switchandlose');
@@ -31,19 +31,19 @@ doorThree.hidden = true;
 
 const switchAndWin = () => { // display the result of the player based on their choices
 	body.hidden = false;
-	SwitchAndWin.hidden = false;
+	switchAndWinChoice.hidden = false;
 }
 const switchAndLose = () => {
 	body.hidden = true;
-	SwitchAndLose.hidden = false;
+	switchAndLoseChoice.hidden = false;
 }
 const noSwitchAndWin = () => {
 	body.hidden = true;
-	NoSwitchAndWin.hidden = false;
+	noSwitchAndWinChoice.hidden = false;
 }
 const noSwitchAndLose = () => {
 	body.hidden = true;
-	NoSwitchAndLose.hidden = false;
+	noSwitchAndLoseChoice.hidden = false;
 }
 
 
@@ -51,8 +51,8 @@ const noSwitchAndLose = () => {
 
 function doorResult(doorNumber) {
 
-	SwitchAndLose.style.display = "none";
-	SwitchAndWin.style.display = "none";
+	switchAndLoseChoice.style.display = "none";
+	switchAndWinChoice.style.display = "none";
 	switchChoiceYes.style.display = "block";
 	switchChoiceNo.style.display = "block";
 	row2.style.display = "block";
@@ -85,15 +85,15 @@ function doorResult(doorNumber) {
 
 		pathSrc = '';
 		if (pathCheck === 1){
-			SwitchAndLose.style.display = "block";
+			switchAndLoseChoice.style.display = "block";
 			pathSrc =  "images/goat.jpg";
 			winsLossesCounter.Losses ++;
 		} else if (pathCheck === 2){
-			SwitchAndWin.style.display = "block";
+			switchAndWinChoice.style.display = "block";
 			pathSrc =  "images/sportscar.jpg";
 			winsLossesCounter.Wins ++;
 		} else {
-			SwitchAndLose.style.display = "block";
+			switchAndLoseChoice.style.display = "block";
 			pathSrc =  "images/goat.jpg";
 			winsLossesCounter.Losses ++;
 		}
@@ -109,21 +109,21 @@ function doorResult(doorNumber) {
 	// Event listener if the player does not opt to switch
 
 		switchChoiceNo.onclick = () => {
-		SwitchAndLose.style.display = "none";
-		SwitchAndWin.style.display = "none";
+		switchAndLoseChoice.style.display = "none";
+		switchAndWinChoice.style.display = "none";
 		document.getElementById("door2").src = "images/door.jpg";
 		document.getElementById("door3").src = "images/door.jpg";
 		pathSrc = '';
 		if (pathCheck === 1) {
-			NoSwitchAndLose.style.display = "block";
+			noSwitchAndLoseChoice.style.display = "block";
 			pathSrc =  "images/goat.jpg";
 			winsLossesCounter.Losses ++;
 		} else if (pathCheck === 2){
-			NoSwitchAndWin.style.display = "block";
+			noSwitchAndWinChoice.style.display = "block";
 			pathSrc =  "images/sportscar.jpg";
 			winsLossesCounter.Wins ++;
 		} else {
-			NoSwitchAndLose.style.display = "block";
+			noSwitchAndLoseChoice.style.display = "block";
 			pathSrc =  "images/goat.jpg";
 			winsLossesCounter.Losses ++;
 		}
@@ -176,10 +176,10 @@ let winsLossesCounterDisplay = document.querySelector("#win-lose-counter-display
 
 
 
-let userSwitchWinTotal = SwitchAndWin.Wins;
-let userStayWinTotal = NoSwitchAndWin.Wins;
-let userSwitchLoseTotal = SwitchAndLose.Losses;
-let userStayLoseTotal = NoSwitchAndLose.Losses;
+let userSwitchWinTotal = switchAndWinChoice.Wins;
+let userStayWinTotal = noSwitchAndWinChoice.Wins;
+let userSwitchLoseTotal = switchAndLoseChoice.Losses;
+let userStayLoseTotal = noSwitchAndLoseChoice.Losses;
 
 
 localStorage.setItem('Won', JSON.stringify(`${userSwitchWinTotal}`));
