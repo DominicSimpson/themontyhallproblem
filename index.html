@@ -5,6 +5,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Roboto&display=swap" rel="stylesheet">
 		<title>The Monty Hall Problem</title>
 	</head>
 <body>
@@ -18,7 +21,8 @@
 			<div id="d2">You selected door2</div>
 			<div id="d3">You selected door3</div>
 			<div id="row2" class="row2">
-				<p>I've opened another door instead. As you can see, there is a goat.</p>
+				<p>Thank you for choosing your door. 
+					I've opened another door instead. As you can see, there is a goat.</p>
 				<p>Do you want to switch to another door?</p>
 				<div class="buttons">
 					<button id="btn-1">Yes</button>
@@ -26,6 +30,35 @@
 				</div>
 			</div>
 		</div>
+
+		<div id="resetbutton">
+			<div id="SwitchAndWin" class="result" style="display: none">
+				<p>Congratulations - you made the right choice by switching to another door!</p>
+				<p>By switching, you increased your probability of winning to 0.67 / two-thirds / 66.6666666%.</p>
+				<p>A sportscar is yours.</p>
+				<button id="submit-switchandwin">Play again to redefine your luck</button>
+			</div>
+	
+			<div id="SwitchAndLose" class="result" style="display: none">
+				<p>Commiserations - the chances of you winning were 0.67 / two-thirds / 66.6666666% since you switched to another door, 
+				but unfortunately, you still lost. Bad luck.</p>
+				<button id="submit-switchandlose">Play again to redefine your luck</button>
+			</div>
+	
+			<div id="NoSwitchAndWin" class="result" style="display: none">
+				<p>Congratulations - you are a very lucky person!</p>
+				<p>The probability of you winning was only 0.33 because you didn't switch to another door, yet you still won.
+				If you had switched doors, you would've increased your probability of winning to 0.67 / two-thirds / 66.6666666%.</p>
+				<button id="submit-noswitchandwin">Play again to redefine your luck</button>
+			</div>
+
+			<div id="NoSwitchAndLose" class="result" style="display: none">
+				<p>You lost - since you didn't switch, your chances of winning were only 33%.</p>
+				<button id="submit-noswitchandlose">Play again to redefine your luck</button>
+			</div>
+		</div>
+
+		<p id="win-lose-counter-display"></p>
 
 		<main class="door-row">
 			<img id="door1" class="door"
@@ -37,33 +70,10 @@
 
 		</main>
 
-		<div id="SwitchAndWin" class="result" style="display: none">
-			<p>Congratulations - you made the right choice by switching to another door!</p>
-			<p>By switching, you increased your probability of winning to 0.67 / two-thirds / 66.6666666%.</p>
-			<p>A sportscar is yours.</p>
-			<input type="submit" id="submit-switchandwin" value="Play again to redefine your luck">
-		</div>
-	
-		<div id="SwitchAndLose" class="result" style="display: none">
-			<p>Commiserations - the chances of you winning was 0.67 / two-thirds / 66.6666666% since you switched to another door, 
-				but unfortunately still lost. Bad luck.</p>
-			<input type="submit" id="submit-switchandlose" value="Play again to redefine your luck">
-		</div>
-	
-		<div id="NoSwitchAndWin" class="result" style="display: none">
-			<p>Congratulations - you are a very lucky person!</p>
-			<p>The probability of you winning was only 0.33 because you didn't switch to another door ,yet you still won.
-			If you had switched doors, you would've increased your probability of winning to 0.67 / two-thirds / 66.6666666%.</p>
-			<input type="submit" id="submit-noswitchandwin" value="Play again to redefine your luck">
-		</div>
-
-		<div id="NoSwitchAndLose" class="result" style="display: none">
-			<p>You Lost - since you didn't switch, your chances of winning were only 33%</p>
-			<input type="Submit" id="submit-noswitchandlose" value="Play again to redefine your luck">
-		</div>
-
+		
 	</div>
 
 	<script src="scripts/script.js"></script>
+	<script src="scripts/localstorage.js"></script>
 </body>
 </html>
