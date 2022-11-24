@@ -45,10 +45,11 @@ The second step was to consider the variables and functions that will be require
 | doorImage3                      | Image of door 3                                                           | DOM variable          |
 | swithChoiceYes                  | Contestant chooses to switch to other door                                | DOM variable          |
 | switchChoiceNo                  | Contestant choose to stay at original door                                | DOM variable          |
-| SwitchAndWin                    | If the contestant switches to another door which holds the car ('wins')   | DOM variable          |
-| SwitchAndLose                   | If the contestant switches to another door which contains a goat ('loses')| DOM variable          |
-| NoSwitchAndWin                  | If the contestant doesn't switch doors, but still wins                    | DOM variable          |
-| NoSwitchAndLose                 | If the contestant doesn't switch doors, and loses                         | DOM variable          |
+| switchAndWinChoice              | If the contestant switches to another door which holds the car ('wins')   | DOM variable          |
+| switchAndLoseChoice             | If the contestant switches to another door which contains a goat ('loses')| DOM variable          |
+| noSwitchAndWinChoice            | If the contestant doesn't switch doors, but still wins                    | DOM variable          |
+| noSwitchAndLoseChoice
+| If the contestant doesn't switch doors, and loses                         | DOM variable          |
 | instructions                    | Text instruction for user                                                 | DOM variable          |
 | row1                            | Text urging user to select a door                                         | DOM variable          |
 | row2                            | Text querying if user wants to switch (includes yes/no buttons)           | DOM variable          |
