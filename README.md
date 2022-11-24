@@ -71,16 +71,8 @@ The second step was to consider the variables and functions that will be require
 
 | Functions                       | Description                                                               | Type                  |
 | -------------                   |:-------------:                                                            | -----:                |
-| winDoorGenerator                | Generates the winning door based on random math number 1-3                | Function              |           
-| doorImage1                      | Event listener for door 1                                                 | Callback              |
-| doorImage2                      | Event listener for door 2                                                 | Callback              |
-| doorImage3                      | Event listener for door 3                                                 | Callback              |
-| switchChoiceYes                 | Displays respective text if player agrees to switch                       | Callback              |
-| switchChoiceNo                  | Displays respective text if player refuses to switch                      | Callback              |
-| switchAndWin                    | Displays the result if the player switches and wins                       | Callback              |
-| switchAndLose                   | Displays the result if the player switches and loses                      | Callback              |
-| noSwitchAndWin                  | Displays the result if player doesn't switch but still wins               | Callback              |
-| noSwitchAndLose                 | Displays the result if player doesn't switch and loses                    | Callback              |
+| doorResult              	  | Displays result after user chooses to switch or not switch                | Function              |      
+| localStorage			  | Puts results in Local Storage					      | Function 	      |
 
 
 ###### Pseudocode:                    
@@ -91,20 +83,20 @@ The second step was to consider the variables and functions that will be require
 
 const switchAndWin = () => {
   body.hidden is equal to true;
-  SwitchAndWin hidden is revealed (equal to false): "Congratulations - you made the right choice by switching to another door! 
+  switchAndWinChoice hidden is revealed (equal to false): "Congratulations - you made the right choice by switching to another door! 
   			By switching, you increased your probability of winning to 0.67 / two-thirds / 66.6666666%.";
 }
 
 const switchAndLose = () => {
   body.hidden is equal to true;
-  SwitchAndLose hidden is revealed (equal to false): "Commiserations - the chances of you winning was 
+  switchAndLoseChoice hidden is revealed (equal to false): "Commiserations - the chances of you winning was 
   			0.67 / two-thirds / 66.6666666% since you switched to another door, but unfortunately you still lost. 
 			Bad luck. Play again to redefine your luck.";
 }
 
 const noSwitchAndWin = () => {
   body.hidden is equal to true;
-  NoSwitchAndWin hidden is revealed (equal to false): "Congratulations - you are a very lucky person!
+  noSwitchAndWinChoice hidden is revealed (equal to false): "Congratulations - you are a very lucky person!
 			The probability of you winning was only 0.33 because you didn't switch to another door, yet you still won.
 			If you had switched doors, you would've increased your probability 
 			of winning to 0.67 / two-thirds / 66.6666666%.";
@@ -113,7 +105,7 @@ const noSwitchAndWin = () => {
 
 const noSwitchAndLose = () => {
   body.hidden is equal to true;
-  NoSwitchAndLose hidden is revealed (equal to false): "You Lost - since you didn't switch, your chances of winning were only 33%.
+  noSwitchAndLoseChoice hidden is revealed (equal to false): "You Lost - since you didn't switch, your chances of winning were only 33%.
   			Play again to redefine your luck.";
 }
 ```
