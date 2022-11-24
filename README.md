@@ -67,13 +67,15 @@ The second step was to consider the variables and functions that will be require
 | submitNoSwitchAndWinReset	  | Resets game								      | DOM variable	      |
 | submitNoSwitchAndLoseReset	  | Resets game								      | DOM variable	      |
 | pathCheck			  | Takes math random / math floor result				      | Variable	      |
+| display			  | Shows wins and losses						      | DOM variable          |
 
 
 
 | Functions                       | Description                                                               | Type                  |
 | -------------                   |:-------------:                                                            | -----:                |
-| doorResult              	  | Displays result after user chooses to switch or not switch                | Function              |      
+| doorResult              	  | Logs win or lose according to door				              | Function              |      
 | localStorage			  | Puts results in Local Storage					      | Function 	      |
+| displayResult  		  | Displays result							      | Function 	      |
 
 
 ###### Pseudocode:                    
