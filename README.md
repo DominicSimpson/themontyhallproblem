@@ -2,11 +2,11 @@
 
 ![monty_hall](https://user-images.githubusercontent.com/52511353/202871777-56df5935-d665-44bf-992f-1d3c188237ac.jpeg)
 
-[View site live here](https://dominicsimpson.github.io/themontyhallproblem/)
-
 ---
 
 ## Background
+
+[View site live here](https://dominicsimpson.github.io/themontyhallproblem/)
 
 ### Imagine being on a TV game show in the 1970s called *Let's Make A Deal*. The game show host, in a sporting gray chequered suit, shows you, the contestant, three doors on the stage. You are informed that behind one of these doors is a shining sports car, which will be yours. Behind the other two are...goats. 
 ###### If you choose the right door, you get to keep the shiny sports car. If you choose the wrong door...well, you *could* take the goat home (provided you don't live in a flat, in which case it would be awkward) - they are noble creatures after all.
