@@ -2,6 +2,8 @@
 
 ![monty_hall](https://user-images.githubusercontent.com/52511353/202871777-56df5935-d665-44bf-992f-1d3c188237ac.jpeg)
 
+[View site live here](https://dominicsimpson.github.io/themontyhallproblem/)
+
 ---
 
 ## Background
